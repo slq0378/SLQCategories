@@ -14,6 +14,7 @@
 		E4BAF8B31D82B8F40044F446 /* SLQCategories.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E4BAF8B11D82B8F40044F446 /* SLQCategories.xcdatamodeld */; };
 		E4BAF8B51D82B8F40044F446 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4BAF8B41D82B8F40044F446 /* Assets.xcassets */; };
 		E4BAF8B81D82B8F40044F446 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4BAF8B61D82B8F40044F446 /* LaunchScreen.storyboard */; };
+		E4BAF8C31D82BA5C0044F446 /* UIImage+Cateogries.m in Sources */ = {isa = PBXBuildFile; fileRef = E4BAF8C21D82BA5C0044F446 /* UIImage+Cateogries.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,8 @@
 		E4BAF8B41D82B8F40044F446 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4BAF8B71D82B8F40044F446 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E4BAF8B91D82B8F40044F446 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4BAF8C11D82BA5C0044F446 /* UIImage+Cateogries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Cateogries.h"; sourceTree = "<group>"; };
+		E4BAF8C21D82BA5C0044F446 /* UIImage+Cateogries.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Cateogries.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +63,7 @@
 		E4BAF8A41D82B8F40044F446 /* SLQCategories */ = {
 			isa = PBXGroup;
 			children = (
+				E4BAF8BF1D82BA5C0044F446 /* Categories */,
 				E4BAF8A81D82B8F40044F446 /* AppDelegate.h */,
 				E4BAF8A91D82B8F40044F446 /* AppDelegate.m */,
 				E4BAF8AB1D82B8F40044F446 /* ViewController.h */,
@@ -80,6 +84,23 @@
 				E4BAF8A61D82B8F40044F446 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E4BAF8BF1D82BA5C0044F446 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				E4BAF8C01D82BA5C0044F446 /* UImage */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		E4BAF8C01D82BA5C0044F446 /* UImage */ = {
+			isa = PBXGroup;
+			children = (
+				E4BAF8C11D82BA5C0044F446 /* UIImage+Cateogries.h */,
+				E4BAF8C21D82BA5C0044F446 /* UIImage+Cateogries.m */,
+			);
+			path = UImage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,6 +175,7 @@
 			files = (
 				E4BAF8B31D82B8F40044F446 /* SLQCategories.xcdatamodeld in Sources */,
 				E4BAF8AD1D82B8F40044F446 /* ViewController.m in Sources */,
+				E4BAF8C31D82BA5C0044F446 /* UIImage+Cateogries.m in Sources */,
 				E4BAF8AA1D82B8F40044F446 /* AppDelegate.m in Sources */,
 				E4BAF8A71D82B8F40044F446 /* main.m in Sources */,
 			);
@@ -304,6 +326,7 @@
 				E4BAF8BE1D82B8F40044F446 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
