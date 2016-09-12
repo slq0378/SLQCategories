@@ -13,8 +13,10 @@ s.source_files =  'SLQCategories/Categories/*.{h,m}'
 s.frameworks   =  'AVFoundation'
 s.requires_arc = true
 
-end
 
-  s.subspec 'UIImage' do |ss|
-    ss.source_files = 'SLQCategories/Categories/UIImage/*.{h,m}'
-  end
+
+	s.subspec 'UIImage' do |ss|
+	ss.source_files = 'SLQCategories/Categories/UIImage/*.{h,m}'
+	end
+
+end
