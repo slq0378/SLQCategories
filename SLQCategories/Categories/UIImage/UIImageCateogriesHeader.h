@@ -4,7 +4,7 @@
 //
 //  Created by Christian on 16/9/9.
 //  Copyright © 2016年 MrSong. All rights reserved.
-//  各种好用分类方法
+//  
 
 #ifndef UIImageCateogriesHeader_h
 #define UIImageCateogriesHeader_h
