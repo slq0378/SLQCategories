@@ -14,7 +14,7 @@
 		E4BAF8B31D82B8F40044F446 /* SLQCategories.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E4BAF8B11D82B8F40044F446 /* SLQCategories.xcdatamodeld */; };
 		E4BAF8B51D82B8F40044F446 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4BAF8B41D82B8F40044F446 /* Assets.xcassets */; };
 		E4BAF8B81D82B8F40044F446 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4BAF8B61D82B8F40044F446 /* LaunchScreen.storyboard */; };
-		E4BAF8C81D82BF900044F446 /* UIImage+Cateogries.m in Sources */ = {isa = PBXBuildFile; fileRef = E4BAF8C71D82BF900044F446 /* UIImage+Cateogries.m */; };
+		E4E4C52C1D86478F00745AE1 /* UIImage+Cateogries.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E4C52B1D86478F00745AE1 /* UIImage+Cateogries.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,9 +29,9 @@
 		E4BAF8B41D82B8F40044F446 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4BAF8B71D82B8F40044F446 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E4BAF8B91D82B8F40044F446 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E4BAF8C61D82BF900044F446 /* UIImage+Cateogries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Cateogries.h"; sourceTree = "<group>"; };
-		E4BAF8C71D82BF900044F446 /* UIImage+Cateogries.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Cateogries.m"; sourceTree = "<group>"; };
-		E4E4C5281D86381C00745AE1 /* AllCategoryHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AllCategoryHeader.h; sourceTree = "<group>"; };
+		E4E4C52A1D86478F00745AE1 /* UIImage+Cateogries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Cateogries.h"; sourceTree = "<group>"; };
+		E4E4C52B1D86478F00745AE1 /* UIImage+Cateogries.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Cateogries.m"; sourceTree = "<group>"; };
+		E4E4C52E1D86480C00745AE1 /* AllCategoriesHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllCategoriesHeader.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,19 +90,19 @@
 		E4BAF8C41D82BF900044F446 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				E4BAF8C51D82BF900044F446 /* UImage */,
-				E4E4C5281D86381C00745AE1 /* AllCategoryHeader.h */,
+				E4E4C52E1D86480C00745AE1 /* AllCategoriesHeader.h */,
+				E4E4C5291D86478F00745AE1 /* UIImage */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
 		};
-		E4BAF8C51D82BF900044F446 /* UImage */ = {
+		E4E4C5291D86478F00745AE1 /* UIImage */ = {
 			isa = PBXGroup;
 			children = (
-				E4BAF8C61D82BF900044F446 /* UIImage+Cateogries.h */,
-				E4BAF8C71D82BF900044F446 /* UIImage+Cateogries.m */,
+				E4E4C52A1D86478F00745AE1 /* UIImage+Cateogries.h */,
+				E4E4C52B1D86478F00745AE1 /* UIImage+Cateogries.m */,
 			);
-			path = UImage;
+			path = UIImage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,7 +177,7 @@
 			files = (
 				E4BAF8B31D82B8F40044F446 /* SLQCategories.xcdatamodeld in Sources */,
 				E4BAF8AD1D82B8F40044F446 /* ViewController.m in Sources */,
-				E4BAF8C81D82BF900044F446 /* UIImage+Cateogries.m in Sources */,
+				E4E4C52C1D86478F00745AE1 /* UIImage+Cateogries.m in Sources */,
 				E4BAF8AA1D82B8F40044F446 /* AppDelegate.m in Sources */,
 				E4BAF8A71D82B8F40044F446 /* main.m in Sources */,
 			);
