@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "UIImage+Cateogries.h"
+#import "AllCategoryHeader.h"
 
 @interface ViewController ()
 /**图片*/
