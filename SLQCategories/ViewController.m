@@ -27,7 +27,7 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-//    self.imageView.image = [UIImage gaussianBlurImage:[UIImage imageNamed:@"1"] andInputRadius:5];
+    self.imageView.image = [UIImage gaussianBlurImage:[UIImage imageNamed:@"1"] andInputRadius:5];
 }
 
 - (void)didReceiveMemoryWarning {

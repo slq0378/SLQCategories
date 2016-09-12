@@ -65,6 +65,7 @@
 		E4A650601D86AA3900441D5F /* UIImage+Convert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Convert.m"; sourceTree = "<group>"; };
 		E4A650621D86AAD700441D5F /* UIImage+CIImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CIImage.h"; sourceTree = "<group>"; };
 		E4A650631D86AAD700441D5F /* UIImage+CIImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CIImage.m"; sourceTree = "<group>"; };
+		E4A650651D86AC3700441D5F /* UIButtonCategoriesHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIButtonCategoriesHeader.h; sourceTree = "<group>"; };
 		E4BAF8A21D82B8F40044F446 /* SLQCategories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SLQCategories.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4BAF8A61D82B8F40044F446 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E4BAF8A81D82B8F40044F446 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -76,7 +77,7 @@
 		E4BAF8B41D82B8F40044F446 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4BAF8B71D82B8F40044F446 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E4BAF8B91D82B8F40044F446 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E4E4C52A1D86478F00745AE1 /* UIImage+Cateogries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Cateogries.h"; sourceTree = "<group>"; };
+		E4E4C52A1D86478F00745AE1 /* UIImageCateogriesHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageCateogriesHeader.h; sourceTree = "<group>"; };
 		E4E4C52F1D86488800745AE1 /* AllCategoriesHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllCategoriesHeader.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -94,6 +95,7 @@
 		E4A650311D86928700441D5F /* UIButton */ = {
 			isa = PBXGroup;
 			children = (
+				E4A650651D86AC3700441D5F /* UIButtonCategoriesHeader.h */,
 				E4A650351D8693EC00441D5F /* UIButton+Font.h */,
 				E4A650361D8693EC00441D5F /* UIButton+Font.m */,
 				E4A650381D86941000441D5F /* UIButton+Block.h */,
@@ -161,7 +163,7 @@
 		E4E4C5291D86478F00745AE1 /* UIImage */ = {
 			isa = PBXGroup;
 			children = (
-				E4E4C52A1D86478F00745AE1 /* UIImage+Cateogries.h */,
+				E4E4C52A1D86478F00745AE1 /* UIImageCateogriesHeader.h */,
 				E4A650411D86A70E00441D5F /* UIImage+fixOrientation.h */,
 				E4A650421D86A70E00441D5F /* UIImage+fixOrientation.m */,
 				E4A650441D86A76500441D5F /* UIImage+Color.h */,

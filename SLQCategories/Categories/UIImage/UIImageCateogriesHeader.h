@@ -1,13 +1,13 @@
 //
-//  UIImage+Cateogries
+//  UIImageCateogriesHeader_h
 //  https://github.com/slq0378/SLQCategories
 //
 //  Created by Christian on 16/9/9.
 //  Copyright © 2016年 MrSong. All rights reserved.
 //  各种好用分类方法
 
-#ifndef UIImage_Cateogries_h
-#define UIImage_Cateogries_h
+#ifndef UIImageCateogriesHeader_h
+#define UIImageCateogriesHeader_h
 #import "UIImage+fixOrientation.h"
 #import "UIImage+Color.h"
 #import "UIImage+Blur.h"
@@ -21,4 +21,4 @@
 #import "UIImage+Convert.h"
 #import "UIImage+CIImage.h"
 
-#endif /* UIImage_Cateogries_h */
+#endif /* UIImageCateogriesHeader_h */
