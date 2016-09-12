@@ -1,6 +1,6 @@
 //
 //  UIButton+CountDown.h
-//  SLQCategories
+//  https://github.com/slq0378/SLQCategories
 //
 //  Created by Christian on 16/9/12.
 //  Copyright © 2016年 MrSong. All rights reserved.

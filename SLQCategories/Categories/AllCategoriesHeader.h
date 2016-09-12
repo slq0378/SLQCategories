@@ -10,4 +10,9 @@
 #define AllCategoriesHeader_h
 #import "UIImage+Cateogries.h"
 
+#import "UIButton+CountDown.h"
+#import "UIButton+Indicator.h"
+#import "UIButton+Font.h"
+#import "UIButton+Block.h"
+
 #endif /* AllCategoriesHeader_h */
