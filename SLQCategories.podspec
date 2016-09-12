@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name         = 'SLQCategories'
-s.version      = '1.0.3'
+s.version      = '1.0.4'
 s.license      = { :type => 'MIT', :file => 'LICENSE' }
 s.homepage     = 'https://github.com/slq0378'
 s.authors      = {'MrSong' => 'slq0378@163.com'}
