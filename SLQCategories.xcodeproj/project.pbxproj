@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E4A650371D8693EC00441D5F /* UIButton+Font.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A650361D8693EC00441D5F /* UIButton+Font.m */; };
+		E4A6503A1D86941000441D5F /* UIButton+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A650391D86941000441D5F /* UIButton+Block.m */; };
+		E4A6503D1D86A0F500441D5F /* UIButton+CountDown.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A6503C1D86A0F500441D5F /* UIButton+CountDown.m */; };
+		E4A650401D86A2F700441D5F /* UIButton+Indicator.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A6503F1D86A2F700441D5F /* UIButton+Indicator.m */; };
 		E4BAF8A71D82B8F40044F446 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E4BAF8A61D82B8F40044F446 /* main.m */; };
 		E4BAF8AA1D82B8F40044F446 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E4BAF8A91D82B8F40044F446 /* AppDelegate.m */; };
 		E4BAF8AD1D82B8F40044F446 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4BAF8AC1D82B8F40044F446 /* ViewController.m */; };
@@ -18,6 +22,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E4A650351D8693EC00441D5F /* UIButton+Font.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Font.h"; sourceTree = "<group>"; };
+		E4A650361D8693EC00441D5F /* UIButton+Font.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Font.m"; sourceTree = "<group>"; };
+		E4A650381D86941000441D5F /* UIButton+Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Block.h"; sourceTree = "<group>"; };
+		E4A650391D86941000441D5F /* UIButton+Block.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Block.m"; sourceTree = "<group>"; };
+		E4A6503B1D86A0F500441D5F /* UIButton+CountDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CountDown.h"; sourceTree = "<group>"; };
+		E4A6503C1D86A0F500441D5F /* UIButton+CountDown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CountDown.m"; sourceTree = "<group>"; };
+		E4A6503E1D86A2F700441D5F /* UIButton+Indicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Indicator.h"; sourceTree = "<group>"; };
+		E4A6503F1D86A2F700441D5F /* UIButton+Indicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Indicator.m"; sourceTree = "<group>"; };
 		E4BAF8A21D82B8F40044F446 /* SLQCategories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SLQCategories.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4BAF8A61D82B8F40044F446 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E4BAF8A81D82B8F40044F446 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -45,6 +57,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E4A650311D86928700441D5F /* UIButton */ = {
+			isa = PBXGroup;
+			children = (
+				E4A650351D8693EC00441D5F /* UIButton+Font.h */,
+				E4A650361D8693EC00441D5F /* UIButton+Font.m */,
+				E4A650381D86941000441D5F /* UIButton+Block.h */,
+				E4A650391D86941000441D5F /* UIButton+Block.m */,
+				E4A6503B1D86A0F500441D5F /* UIButton+CountDown.h */,
+				E4A6503C1D86A0F500441D5F /* UIButton+CountDown.m */,
+				E4A6503E1D86A2F700441D5F /* UIButton+Indicator.h */,
+				E4A6503F1D86A2F700441D5F /* UIButton+Indicator.m */,
+			);
+			path = UIButton;
+			sourceTree = "<group>";
+		};
 		E4BAF8991D82B8F40044F446 = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +117,7 @@
 		E4BAF8C41D82BF900044F446 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				E4A650311D86928700441D5F /* UIButton */,
 				E4E4C5291D86478F00745AE1 /* UIImage */,
 				E4E4C52F1D86488800745AE1 /* AllCategoriesHeader.h */,
 			);
@@ -177,8 +205,12 @@
 			files = (
 				E4BAF8B31D82B8F40044F446 /* SLQCategories.xcdatamodeld in Sources */,
 				E4BAF8AD1D82B8F40044F446 /* ViewController.m in Sources */,
+				E4A650401D86A2F700441D5F /* UIButton+Indicator.m in Sources */,
 				E4E4C52C1D86478F00745AE1 /* UIImage+Cateogries.m in Sources */,
+				E4A6503A1D86941000441D5F /* UIButton+Block.m in Sources */,
 				E4BAF8AA1D82B8F40044F446 /* AppDelegate.m in Sources */,
+				E4A6503D1D86A0F500441D5F /* UIButton+CountDown.m in Sources */,
+				E4A650371D8693EC00441D5F /* UIButton+Font.m in Sources */,
 				E4BAF8A71D82B8F40044F446 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
