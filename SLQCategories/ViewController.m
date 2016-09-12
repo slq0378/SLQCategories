@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "AllCategoryHeader.h"
+#import "AllCategoriesHeader.h"
 
 @interface ViewController ()
 /**图片*/
