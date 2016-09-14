@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E4A12DCD1D891EA7009581AA /* UIAlertView+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A12DCC1D891EA7009581AA /* UIAlertView+Block.m */; };
 		E4A650371D8693EC00441D5F /* UIButton+Font.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A650361D8693EC00441D5F /* UIButton+Font.m */; };
 		E4A6503A1D86941000441D5F /* UIButton+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A650391D86941000441D5F /* UIButton+Block.m */; };
 		E4A6503D1D86A0F500441D5F /* UIButton+CountDown.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A6503C1D86A0F500441D5F /* UIButton+CountDown.m */; };
@@ -35,6 +36,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E4A12DCB1D891EA7009581AA /* UIAlertView+Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Block.h"; sourceTree = "<group>"; };
+		E4A12DCC1D891EA7009581AA /* UIAlertView+Block.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Block.m"; sourceTree = "<group>"; };
 		E4A650351D8693EC00441D5F /* UIButton+Font.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Font.h"; sourceTree = "<group>"; };
 		E4A650361D8693EC00441D5F /* UIButton+Font.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Font.m"; sourceTree = "<group>"; };
 		E4A650381D86941000441D5F /* UIButton+Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Block.h"; sourceTree = "<group>"; };
@@ -98,6 +101,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E4A12DCA1D891EA7009581AA /* UIAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				E4A12DCB1D891EA7009581AA /* UIAlertView+Block.h */,
+				E4A12DCC1D891EA7009581AA /* UIAlertView+Block.m */,
+			);
+			path = UIAlertView;
+			sourceTree = "<group>";
+		};
 		E4A650311D86928700441D5F /* UIButton */ = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +182,7 @@
 		E4BAF8C41D82BF900044F446 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				E4A12DCA1D891EA7009581AA /* UIAlertView */,
 				E4A650661D87A36500441D5F /* UIApplication */,
 				E4A650311D86928700441D5F /* UIButton */,
 				E4E4C5291D86478F00745AE1 /* UIImage */,
@@ -280,6 +293,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4A12DCD1D891EA7009581AA /* UIAlertView+Block.m in Sources */,
 				E4A650641D86AAD700441D5F /* UIImage+CIImage.m in Sources */,
 				E4A6505B1D86A9A100441D5F /* UIImage+Gif.m in Sources */,
 				E4A650431D86A70E00441D5F /* UIImage+fixOrientation.m in Sources */,
