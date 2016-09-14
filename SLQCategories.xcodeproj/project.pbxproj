@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		E4A12DCD1D891EA7009581AA /* UIAlertView+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A12DCC1D891EA7009581AA /* UIAlertView+Block.m */; };
+		E4A12DD51D8921D2009581AA /* UIBezierPath+BasicShapes.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A12DD01D8921D2009581AA /* UIBezierPath+BasicShapes.m */; };
+		E4A12DD61D8921D2009581AA /* UIBezierPath+SVG.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A12DD21D8921D2009581AA /* UIBezierPath+SVG.m */; };
+		E4A12DD71D8921D2009581AA /* UIBezierPath+Symbol.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A12DD41D8921D2009581AA /* UIBezierPath+Symbol.m */; };
+		E4A12DDC1D892369009581AA /* GraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A12DDB1D892369009581AA /* GraphView.m */; };
 		E4A650371D8693EC00441D5F /* UIButton+Font.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A650361D8693EC00441D5F /* UIButton+Font.m */; };
 		E4A6503A1D86941000441D5F /* UIButton+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A650391D86941000441D5F /* UIButton+Block.m */; };
 		E4A6503D1D86A0F500441D5F /* UIButton+CountDown.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A6503C1D86A0F500441D5F /* UIButton+CountDown.m */; };
@@ -38,6 +42,14 @@
 /* Begin PBXFileReference section */
 		E4A12DCB1D891EA7009581AA /* UIAlertView+Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Block.h"; sourceTree = "<group>"; };
 		E4A12DCC1D891EA7009581AA /* UIAlertView+Block.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Block.m"; sourceTree = "<group>"; };
+		E4A12DCF1D8921D2009581AA /* UIBezierPath+BasicShapes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBezierPath+BasicShapes.h"; sourceTree = "<group>"; };
+		E4A12DD01D8921D2009581AA /* UIBezierPath+BasicShapes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBezierPath+BasicShapes.m"; sourceTree = "<group>"; };
+		E4A12DD11D8921D2009581AA /* UIBezierPath+SVG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBezierPath+SVG.h"; sourceTree = "<group>"; };
+		E4A12DD21D8921D2009581AA /* UIBezierPath+SVG.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBezierPath+SVG.m"; sourceTree = "<group>"; };
+		E4A12DD31D8921D2009581AA /* UIBezierPath+Symbol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBezierPath+Symbol.h"; sourceTree = "<group>"; };
+		E4A12DD41D8921D2009581AA /* UIBezierPath+Symbol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBezierPath+Symbol.m"; sourceTree = "<group>"; };
+		E4A12DDA1D892369009581AA /* GraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphView.h; sourceTree = "<group>"; };
+		E4A12DDB1D892369009581AA /* GraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphView.m; sourceTree = "<group>"; };
 		E4A650351D8693EC00441D5F /* UIButton+Font.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Font.h"; sourceTree = "<group>"; };
 		E4A650361D8693EC00441D5F /* UIButton+Font.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Font.m"; sourceTree = "<group>"; };
 		E4A650381D86941000441D5F /* UIButton+Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Block.h"; sourceTree = "<group>"; };
@@ -110,6 +122,19 @@
 			path = UIAlertView;
 			sourceTree = "<group>";
 		};
+		E4A12DCE1D8921D2009581AA /* UIBezierPath */ = {
+			isa = PBXGroup;
+			children = (
+				E4A12DCF1D8921D2009581AA /* UIBezierPath+BasicShapes.h */,
+				E4A12DD01D8921D2009581AA /* UIBezierPath+BasicShapes.m */,
+				E4A12DD11D8921D2009581AA /* UIBezierPath+SVG.h */,
+				E4A12DD21D8921D2009581AA /* UIBezierPath+SVG.m */,
+				E4A12DD31D8921D2009581AA /* UIBezierPath+Symbol.h */,
+				E4A12DD41D8921D2009581AA /* UIBezierPath+Symbol.m */,
+			);
+			path = UIBezierPath;
+			sourceTree = "<group>";
+		};
 		E4A650311D86928700441D5F /* UIButton */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +186,8 @@
 				E4BAF8A91D82B8F40044F446 /* AppDelegate.m */,
 				E4BAF8AB1D82B8F40044F446 /* ViewController.h */,
 				E4BAF8AC1D82B8F40044F446 /* ViewController.m */,
+				E4A12DDA1D892369009581AA /* GraphView.h */,
+				E4A12DDB1D892369009581AA /* GraphView.m */,
 				E4BAF8AE1D82B8F40044F446 /* Main.storyboard */,
 				E4BAF8B41D82B8F40044F446 /* Assets.xcassets */,
 				E4BAF8B61D82B8F40044F446 /* LaunchScreen.storyboard */,
@@ -182,6 +209,7 @@
 		E4BAF8C41D82BF900044F446 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				E4A12DCE1D8921D2009581AA /* UIBezierPath */,
 				E4A12DCA1D891EA7009581AA /* UIAlertView */,
 				E4A650661D87A36500441D5F /* UIApplication */,
 				E4A650311D86928700441D5F /* UIButton */,
@@ -310,12 +338,16 @@
 				E4A650721D87A36500441D5F /* UIApplication+Permissions.m in Sources */,
 				E4A650461D86A76500441D5F /* UIImage+Color.m in Sources */,
 				E4A650371D8693EC00441D5F /* UIButton+Font.m in Sources */,
+				E4A12DD71D8921D2009581AA /* UIBezierPath+Symbol.m in Sources */,
 				E4A650551D86A8FB00441D5F /* UIImage+Capture.m in Sources */,
+				E4A12DD51D8921D2009581AA /* UIBezierPath+BasicShapes.m in Sources */,
 				E4BAF8A71D82B8F40044F446 /* main.m in Sources */,
+				E4A12DDC1D892369009581AA /* GraphView.m in Sources */,
 				E4A650611D86AA3900441D5F /* UIImage+Convert.m in Sources */,
 				E4A6506F1D87A36500441D5F /* UIApplication+ApplicationSize.m in Sources */,
 				E4A6504C1D86A83400441D5F /* UIImage+Alpha.m in Sources */,
 				E4A6504F1D86A85F00441D5F /* UIImage+Resize.m in Sources */,
+				E4A12DD61D8921D2009581AA /* UIBezierPath+SVG.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

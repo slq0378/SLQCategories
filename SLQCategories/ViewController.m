@@ -12,7 +12,7 @@
 #import "AllCategoriesHeader.h"
 #import "UIApplication+ApplicationSize.h"
 #import "UIApplication+Permissions.h"
-
+#import "GraphView.h"
 
 @interface ViewController ()
 /**图片*/
@@ -21,6 +21,8 @@
 @property (nonatomic, strong) UIButton *btn;
 /**按钮*/
 @property (nonatomic, strong) UIButton *infoBtn;
+/**GraphView*/
+@property (nonatomic, strong) GraphView *graphView;
 @end
 
 @implementation ViewController
@@ -29,9 +31,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 200)];
-    [self.view addSubview:self.imageView];
-    self.imageView.image = [UIImage imageNamed:@"1"];
+//    self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 200)];
+//    [self.view addSubview:self.imageView];
+//    self.imageView.image = [UIImage imageNamed:@"1"];
 //    UITextField *field = [[UITextField alloc] initWithFrame:CGRectMake(0, 200, ScreenWidth, 44)];
 //    field.layer.cornerRadius = 5;
 //    field.layer.masksToBounds = YES;
@@ -60,17 +62,27 @@
     [self eventHandle];
     
     
-    
-    NSLog(@"Access to Bluetooth: %d", [[UIApplication sharedApplication] hasAccessToBluetoothLE]);
-    NSLog(@"Access to Calendar: %d", [[UIApplication sharedApplication] hasAccessToCalendar]);
-    NSLog(@"Access to Contacts: %d", [[UIApplication sharedApplication] hasAccessToContacts]);
-    NSLog(@"Access to Location: %d", [[UIApplication sharedApplication] hasAccessToLocation]);
-    NSLog(@"Access to Photos: %d", [[UIApplication sharedApplication] hasAccessToPhotos]);
+    _graphView = [[GraphView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 200)];
+    _graphView.backgroundColor = [UIColor greenColor];
+    [self.view addSubview:_graphView];
 
 }
 
 #pragma mark - 事件处理
 - (void)eventHandle {
+    __weak typeof (self)weakSelf = self;
+    // 事件处理
+    [_btn addActionBlock:^(NSInteger tag) {
+
+    }];
+    
+    [_infoBtn addActionBlock:^(NSInteger tag) {
+
+        
+    }];
+}
+#pragma mark - UIApplicationTest
+- (void)eventHandle_ApplicationTest {
     __weak typeof (self)weakSelf = self;
     UIApplication *mainApp = [UIApplication sharedApplication];
     // 事件处理
@@ -106,8 +118,6 @@
         
     }];
 }
-
-
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     self.imageView.image = [UIImage gaussianBlurImage:[UIImage imageNamed:@"1"]
                                        andInputRadius:5];
