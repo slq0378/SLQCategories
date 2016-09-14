@@ -13,6 +13,7 @@
 #import "UIApplication+ApplicationSize.h"
 #import "UIApplication+Permissions.h"
 #import "GraphView.h"
+#import "UIColorCategoriesHeader.h"
 
 @interface ViewController ()
 /**图片*/
@@ -62,10 +63,10 @@
     [self eventHandle];
     
     
-    _graphView = [[GraphView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 200)];
-    _graphView.backgroundColor = [UIColor greenColor];
-    [self.view addSubview:_graphView];
-
+//    _graphView = [[GraphView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 200)];
+//    _graphView.backgroundColor = [UIColor greenColor];
+//    [self.view addSubview:_graphView];
+    self.view.backgroundColor = [UIColor redColor];
 }
 
 #pragma mark - 事件处理
@@ -73,11 +74,12 @@
     __weak typeof (self)weakSelf = self;
     // 事件处理
     [_btn addActionBlock:^(NSInteger tag) {
-
+        weakSelf.view.backgroundColor = [UIColor redColor];
     }];
     
     [_infoBtn addActionBlock:^(NSInteger tag) {
-
+        
+           weakSelf.view.backgroundColor = [[UIColor redColor] darkenColor:0.1];
         
     }];
 }

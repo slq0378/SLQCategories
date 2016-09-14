@@ -12,6 +12,10 @@
 		E4A12DD61D8921D2009581AA /* UIBezierPath+SVG.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A12DD21D8921D2009581AA /* UIBezierPath+SVG.m */; };
 		E4A12DD71D8921D2009581AA /* UIBezierPath+Symbol.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A12DD41D8921D2009581AA /* UIBezierPath+Symbol.m */; };
 		E4A12DDC1D892369009581AA /* GraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A12DDB1D892369009581AA /* GraphView.m */; };
+		E4A12DE81D893A39009581AA /* UIColor+Gradient.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A12DDF1D893A39009581AA /* UIColor+Gradient.m */; };
+		E4A12DE91D893A39009581AA /* UIColor+HEX.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A12DE11D893A39009581AA /* UIColor+HEX.m */; };
+		E4A12DEA1D893A39009581AA /* UIColor+Modify.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A12DE31D893A39009581AA /* UIColor+Modify.m */; };
+		E4A12DEB1D893A39009581AA /* UIColor+Random.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A12DE51D893A39009581AA /* UIColor+Random.m */; };
 		E4A650371D8693EC00441D5F /* UIButton+Font.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A650361D8693EC00441D5F /* UIButton+Font.m */; };
 		E4A6503A1D86941000441D5F /* UIButton+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A650391D86941000441D5F /* UIButton+Block.m */; };
 		E4A6503D1D86A0F500441D5F /* UIButton+CountDown.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A6503C1D86A0F500441D5F /* UIButton+CountDown.m */; };
@@ -50,6 +54,15 @@
 		E4A12DD41D8921D2009581AA /* UIBezierPath+Symbol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBezierPath+Symbol.m"; sourceTree = "<group>"; };
 		E4A12DDA1D892369009581AA /* GraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphView.h; sourceTree = "<group>"; };
 		E4A12DDB1D892369009581AA /* GraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphView.m; sourceTree = "<group>"; };
+		E4A12DDE1D893A39009581AA /* UIColor+Gradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Gradient.h"; sourceTree = "<group>"; };
+		E4A12DDF1D893A39009581AA /* UIColor+Gradient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Gradient.m"; sourceTree = "<group>"; };
+		E4A12DE01D893A39009581AA /* UIColor+HEX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HEX.h"; sourceTree = "<group>"; };
+		E4A12DE11D893A39009581AA /* UIColor+HEX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HEX.m"; sourceTree = "<group>"; };
+		E4A12DE21D893A39009581AA /* UIColor+Modify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Modify.h"; sourceTree = "<group>"; };
+		E4A12DE31D893A39009581AA /* UIColor+Modify.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Modify.m"; sourceTree = "<group>"; };
+		E4A12DE41D893A39009581AA /* UIColor+Random.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Random.h"; sourceTree = "<group>"; };
+		E4A12DE51D893A39009581AA /* UIColor+Random.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Random.m"; sourceTree = "<group>"; };
+		E4A12DED1D893AA6009581AA /* UIColorCategoriesHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIColorCategoriesHeader.h; sourceTree = "<group>"; };
 		E4A650351D8693EC00441D5F /* UIButton+Font.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Font.h"; sourceTree = "<group>"; };
 		E4A650361D8693EC00441D5F /* UIButton+Font.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Font.m"; sourceTree = "<group>"; };
 		E4A650381D86941000441D5F /* UIButton+Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Block.h"; sourceTree = "<group>"; };
@@ -135,6 +148,22 @@
 			path = UIBezierPath;
 			sourceTree = "<group>";
 		};
+		E4A12DDD1D893A39009581AA /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				E4A12DED1D893AA6009581AA /* UIColorCategoriesHeader.h */,
+				E4A12DDE1D893A39009581AA /* UIColor+Gradient.h */,
+				E4A12DDF1D893A39009581AA /* UIColor+Gradient.m */,
+				E4A12DE01D893A39009581AA /* UIColor+HEX.h */,
+				E4A12DE11D893A39009581AA /* UIColor+HEX.m */,
+				E4A12DE21D893A39009581AA /* UIColor+Modify.h */,
+				E4A12DE31D893A39009581AA /* UIColor+Modify.m */,
+				E4A12DE41D893A39009581AA /* UIColor+Random.h */,
+				E4A12DE51D893A39009581AA /* UIColor+Random.m */,
+			);
+			path = UIColor;
+			sourceTree = "<group>";
+		};
 		E4A650311D86928700441D5F /* UIButton */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,6 +238,7 @@
 		E4BAF8C41D82BF900044F446 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				E4A12DDD1D893A39009581AA /* UIColor */,
 				E4A12DCE1D8921D2009581AA /* UIBezierPath */,
 				E4A12DCA1D891EA7009581AA /* UIAlertView */,
 				E4A650661D87A36500441D5F /* UIApplication */,
@@ -332,15 +362,19 @@
 				E4A6503A1D86941000441D5F /* UIButton+Block.m in Sources */,
 				E4A650491D86A7CC00441D5F /* UIImage+Blur.m in Sources */,
 				E4BAF8AA1D82B8F40044F446 /* AppDelegate.m in Sources */,
+				E4A12DE81D893A39009581AA /* UIColor+Gradient.m in Sources */,
 				E4A6505E1D86A9E100441D5F /* UIImage+Rotate.m in Sources */,
 				E4A650521D86A8CA00441D5F /* UIImage+RoundImage.m in Sources */,
 				E4A6503D1D86A0F500441D5F /* UIButton+CountDown.m in Sources */,
 				E4A650721D87A36500441D5F /* UIApplication+Permissions.m in Sources */,
 				E4A650461D86A76500441D5F /* UIImage+Color.m in Sources */,
+				E4A12DEB1D893A39009581AA /* UIColor+Random.m in Sources */,
+				E4A12DEA1D893A39009581AA /* UIColor+Modify.m in Sources */,
 				E4A650371D8693EC00441D5F /* UIButton+Font.m in Sources */,
 				E4A12DD71D8921D2009581AA /* UIBezierPath+Symbol.m in Sources */,
 				E4A650551D86A8FB00441D5F /* UIImage+Capture.m in Sources */,
 				E4A12DD51D8921D2009581AA /* UIBezierPath+BasicShapes.m in Sources */,
+				E4A12DE91D893A39009581AA /* UIColor+HEX.m in Sources */,
 				E4BAF8A71D82B8F40044F446 /* main.m in Sources */,
 				E4A12DDC1D892369009581AA /* GraphView.m in Sources */,
 				E4A650611D86AA3900441D5F /* UIImage+Convert.m in Sources */,
