@@ -41,4 +41,7 @@
     return grayImage;
 }
 
+- (UIImage *)covertToGrayImage {
+    return [UIImage covertToGrayImageFromImage:self];
+}
 @end
