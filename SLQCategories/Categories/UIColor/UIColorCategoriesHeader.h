@@ -12,6 +12,5 @@
 #import "UIColor+HEX.h"
 #import "UIColor+Modify.h"
 #import "UIColor+Random.h"
-#import "UIColor+Web.h"
 
 #endif /* UIColorCategoriesHeader_h */
