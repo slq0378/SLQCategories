@@ -14,6 +14,7 @@
 #import "UIApplication+Permissions.h"
 #import "GraphView.h"
 #import "UIColorCategoriesHeader.h"
+#import "UIDevice+Hardware.h"
 
 @interface ViewController ()
 /**图片*/
@@ -74,12 +75,33 @@
     __weak typeof (self)weakSelf = self;
     // 事件处理
     [_btn addActionBlock:^(NSInteger tag) {
-        weakSelf.view.backgroundColor = [UIColor redColor];
+        UIDevice *dev = [UIDevice currentDevice ];
+        NSLog(@"设备架构:%@",[[UIDevice currentDevice] hardwareString]);// x86_64
+        NSLog(@"MAC地址:%@",[UIDevice macAddress]);//A4:5E:60:BD:5F:53
+        NSLog(@"设备描述:%@",[[UIDevice currentDevice ] hardwareDescription]);
+//        NSLog(@"MAC地址:%@",[UIDevice macAddress]);
+//        NSLog(@"MAC地址:%@",[UIDevice macAddress]);
+        
+        NSLog(@"CPU转速:%lu",[UIDevice cpuFrequency]);
+        NSLog(@"总线频率:%lu",[UIDevice busFrequency]);
+        NSLog(@"RAM尺寸:%lu",[UIDevice ramSize]);//0
+        NSLog(@"CPU总数:%lu",[UIDevice cpuNumber]);//4
+        
+        
+        
+        
+        
+        NSLog(@"获取iOS系统的版本号:%@",[UIDevice systemVersion]);//9.3
+        NSLog(@"判断当前系统是否有摄像头:%zd",[UIDevice hasCamera]);// 0
+        NSLog(@"获取手机内存总量:%zd",[UIDevice totalMemoryBytes]);//
+        NSLog(@"获取手机可用内存:%zd",[UIDevice freeMemoryBytes]);//
+        NSLog(@"获取手机硬盘空闲空间:%lld",[UIDevice freeDiskSpaceBytes]);
+        NSLog(@"获取手机硬盘总空间:%lld",[UIDevice totalDiskSpaceBytes]);
     }];
     
     [_infoBtn addActionBlock:^(NSInteger tag) {
         
-           weakSelf.view.backgroundColor = [[UIColor redColor] darkenColor:0.1];
+        
         
     }];
 }
