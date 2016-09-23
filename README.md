@@ -97,9 +97,6 @@ image =  [image waterWithText:@"哈哈哈" direction:ImageWaterDirectCenter font
 ## 好了，接下来会继续整理相关分类，当然大家如果有好的分类，也可以添加到这个工程中。众人拾材火焰高。
 
 # UIButton分类
-@(iOS)[UIButton,UIAlertView]
-
-[TOC]
 
 ## 改变UIButtonl的字体
 - 给UIButton添加分类，重写load方法，运用运行时对方法进行交换
@@ -449,6 +446,63 @@ image =  [image waterWithText:@"哈哈哈" direction:ImageWaterDirectCenter font
 ```
 
 > 绘图的源代码比较枯燥，就不贴了，去github看吧
-> 总结一下，以后使用起来就方便了
+
+# UIControl+Block
+- 使用Block方式处理UIControl控件的点击事件
+
+
+```objc
+#import <UIKit/UIKit.h>
+
+@interface UIControl (Block)
+
+- (void)touchDown:(void (^)(void))eventBlock;
+- (void)touchDownRepeat:(void (^)(void))eventBlock;
+- (void)touchDragInside:(void (^)(void))eventBlock;
+- (void)touchDragOutside:(void (^)(void))eventBlock;
+- (void)touchDragEnter:(void (^)(void))eventBlock;
+- (void)touchDragExit:(void (^)(void))eventBlock;
+- (void)touchUpInside:(void (^)(void))eventBlock;
+- (void)touchUpOutside:(void (^)(void))eventBlock;
+- (void)touchCancel:(void (^)(void))eventBlock;
+- (void)valueChanged:(void (^)(void))eventBlock;
+- (void)editingDidBegin:(void (^)(void))eventBlock;
+- (void)editingChanged:(void (^)(void))eventBlock;
+- (void)editingDidEnd:(void (^)(void))eventBlock;
+- (void)editingDidEndOnExit:(void (^)(void))eventBlock;
+
+@end
+```
+# UIDevice+Hardware
+- 一些设备相关的方法
+
+```objc
+//Return the current device CPU frequency
++ (NSUInteger)cpuFrequency;
+// Return the current device BUS frequency
++ (NSUInteger)busFrequency;
+//current device RAM size
++ (NSUInteger)ramSize;
+//Return the current device CPU number
++ (NSUInteger)cpuNumber;
+//Return the current device total memory
+
+/// 获取iOS系统的版本号
++ (NSString *)systemVersion;
+/// 判断当前系统是否有摄像头
++ (BOOL)hasCamera;
+/// 获取手机内存总量, 返回的是字节数
++ (NSUInteger)totalMemoryBytes;
+/// 获取手机可用内存, 返回的是字节数
++ (NSUInteger)freeMemoryBytes;
+
+/// 获取手机硬盘空闲空间, 返回的是字节数
++ (long long)freeDiskSpaceBytes;
+/// 获取手机硬盘总空间, 返回的是字节数
++ (long long)totalDiskSpaceBytes;
+@end
+```
+
+
 
 > [分类源码在这里](https://github.com/slq0378/SLQCategories)
