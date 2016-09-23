@@ -18,5 +18,11 @@
  *  @return 黑白图像
  */
 + (UIImage*)covertToGrayImageFromImage:(UIImage*)sourceImage;
+/**
+ *  转成黑白图像
+ *
+ *  @return 黑白图像
+ */
+- (UIImage *)covertToGrayImage;
 
 @end
