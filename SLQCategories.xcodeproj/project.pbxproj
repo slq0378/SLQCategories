@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		E4221BF51D8D64C000C11539 /* UIControl+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = E4221BEE1D8D64C000C11539 /* UIControl+Block.m */; };
 		E4221BF61D8D64C000C11539 /* UIDevice+Hardware.m in Sources */ = {isa = PBXBuildFile; fileRef = E4221BF11D8D64C000C11539 /* UIDevice+Hardware.m */; };
+		E429192A1D9510C200B230B5 /* UITextField+History.m in Sources */ = {isa = PBXBuildFile; fileRef = E42919241D9510C200B230B5 /* UITextField+History.m */; };
+		E429192C1D9510C200B230B5 /* UITextField+Shake.m in Sources */ = {isa = PBXBuildFile; fileRef = E42919281D9510C200B230B5 /* UITextField+Shake.m */; };
 		E4A12DCD1D891EA7009581AA /* UIAlertView+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A12DCC1D891EA7009581AA /* UIAlertView+Block.m */; };
 		E4A12DD51D8921D2009581AA /* UIBezierPath+BasicShapes.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A12DD01D8921D2009581AA /* UIBezierPath+BasicShapes.m */; };
 		E4A12DD61D8921D2009581AA /* UIBezierPath+SVG.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A12DD21D8921D2009581AA /* UIBezierPath+SVG.m */; };
@@ -50,6 +52,10 @@
 		E4221BEE1D8D64C000C11539 /* UIControl+Block.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+Block.m"; sourceTree = "<group>"; };
 		E4221BF01D8D64C000C11539 /* UIDevice+Hardware.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+Hardware.h"; sourceTree = "<group>"; };
 		E4221BF11D8D64C000C11539 /* UIDevice+Hardware.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+Hardware.m"; sourceTree = "<group>"; };
+		E42919231D9510C200B230B5 /* UITextField+History.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+History.h"; sourceTree = "<group>"; };
+		E42919241D9510C200B230B5 /* UITextField+History.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+History.m"; sourceTree = "<group>"; };
+		E42919271D9510C200B230B5 /* UITextField+Shake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+Shake.h"; sourceTree = "<group>"; };
+		E42919281D9510C200B230B5 /* UITextField+Shake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Shake.m"; sourceTree = "<group>"; };
 		E4A12DCB1D891EA7009581AA /* UIAlertView+Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Block.h"; sourceTree = "<group>"; };
 		E4A12DCC1D891EA7009581AA /* UIAlertView+Block.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Block.m"; sourceTree = "<group>"; };
 		E4A12DCF1D8921D2009581AA /* UIBezierPath+BasicShapes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBezierPath+BasicShapes.h"; sourceTree = "<group>"; };
@@ -148,6 +154,17 @@
 				E4221BF11D8D64C000C11539 /* UIDevice+Hardware.m */,
 			);
 			path = UIDevice;
+			sourceTree = "<group>";
+		};
+		E42919201D9510C200B230B5 /* UITextField */ = {
+			isa = PBXGroup;
+			children = (
+				E42919231D9510C200B230B5 /* UITextField+History.h */,
+				E42919241D9510C200B230B5 /* UITextField+History.m */,
+				E42919271D9510C200B230B5 /* UITextField+Shake.h */,
+				E42919281D9510C200B230B5 /* UITextField+Shake.m */,
+			);
+			path = UITextField;
 			sourceTree = "<group>";
 		};
 		E4A12DCA1D891EA7009581AA /* UIAlertView */ = {
@@ -262,6 +279,7 @@
 		E4BAF8C41D82BF900044F446 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				E42919201D9510C200B230B5 /* UITextField */,
 				E4221BEA1D8D64C000C11539 /* UIControl */,
 				E4221BEF1D8D64C000C11539 /* UIDevice */,
 				E4A12DDD1D893A39009581AA /* UIColor */,
@@ -383,6 +401,7 @@
 				E4A650641D86AAD700441D5F /* UIImage+CIImage.m in Sources */,
 				E4A6505B1D86A9A100441D5F /* UIImage+Gif.m in Sources */,
 				E4A650431D86A70E00441D5F /* UIImage+fixOrientation.m in Sources */,
+				E429192C1D9510C200B230B5 /* UITextField+Shake.m in Sources */,
 				E4BAF8B31D82B8F40044F446 /* SLQCategories.xcdatamodeld in Sources */,
 				E4BAF8AD1D82B8F40044F446 /* ViewController.m in Sources */,
 				E4A650401D86A2F700441D5F /* UIButton+Indicator.m in Sources */,
@@ -411,6 +430,7 @@
 				E4A6506F1D87A36500441D5F /* UIApplication+ApplicationSize.m in Sources */,
 				E4A6504C1D86A83400441D5F /* UIImage+Alpha.m in Sources */,
 				E4A6504F1D86A85F00441D5F /* UIImage+Resize.m in Sources */,
+				E429192A1D9510C200B230B5 /* UITextField+History.m in Sources */,
 				E4A12DD61D8921D2009581AA /* UIBezierPath+SVG.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
