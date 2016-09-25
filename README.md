@@ -97,9 +97,6 @@ image =  [image waterWithText:@"哈哈哈" direction:ImageWaterDirectCenter font
 ## 好了，接下来会继续整理相关分类，当然大家如果有好的分类，也可以添加到这个工程中。众人拾材火焰高。
 
 # UIButton分类
-@(iOS)[UIButton,UIAlertView]
-
-[TOC]
 
 ## 改变UIButtonl的字体
 - 给UIButton添加分类，重写load方法，运用运行时对方法进行交换
@@ -127,5 +124,385 @@ image =  [image waterWithText:@"哈哈哈" direction:ImageWaterDirectCenter font
 
 # UIAlertView Block实现回调
 - 封装一个便捷的block回调来实现UIAlertView的事件。
+
+# UIColor分类
+
+## 生成渐变色
+- 指定两种颜色和渐变色的高度范围即可。
+> ![渐变色.gif](http://upload-images.jianshu.io/upload_images/760578-d0f2391c9e4f8b53.gif?imageMogr2/auto-orient/strip)
+
+
+```objc
+/**
+ *  生成渐变色
+ *
+ *  @param c1     头
+ *  @param c2     尾
+ *  @param height 范围
+ *
+ *  @return 渐变色
+ */
++ (UIColor*)gradientFromColor:(UIColor*)c1 toColor:(UIColor*)c2 withHeight:(int)height;
+```
+
+
+## 16进制颜色
+- 16进制数字转换颜色
+- 16进制字符串转换颜色
+
+```objc
+/**
+ *  由16进制颜色格式生成UIColor
+ *
+ *  @param hex 16进制颜色0x00FF00
+ *
+ *  @return UIColor
+ */
++ (UIColor *)colorWithHex:(UInt32)hex;
+/**
+ *  由16进制颜色格式生成UIColor
+ *
+ *  @param hex 16进制颜色0x00FF00
+ *  @param alpha 透明
+ *
+ *  @return Color
+ */
++ (UIColor *)colorWithHex:(UInt32)hex andAlpha:(CGFloat)alpha;
+/**
+ *  由16进制颜色字符串格式生成UIColor
+ *
+ *  @param hex 16进制颜色#00FF00
+ *
+ *  @return UIColor
+ */
++ (UIColor *)colorWithHexString:(NSString *)hexString;
+/**
+ *  生成当前颜色的16进制字符串
+ *
+ *  @return 16进制字符串
+ */
+- (NSString *)HEXString;
+
++ (UIColor *)colorWithWholeRed:(CGFloat)red
+                         green:(CGFloat)green
+                          blue:(CGFloat)blue
+                         alpha:(CGFloat)alpha;
+
++ (UIColor *)colorWithWholeRed:(CGFloat)red
+                         green:(CGFloat)green
+                          blue:(CGFloat)blue;
+@end
+```
+
+## 颜色亮度、饱和度等
+
+
+```objc
+/// 翻转颜色
+- (UIColor *)invertedColor;
+/// 半透明色
+- (UIColor *)colorForTranslucency;
+/**
+ *  更改颜色亮度
+ *
+ *  @param lighten 亮度从0到1
+ *
+ *  @return
+ */
+- (UIColor *)lightenColor:(CGFloat)lighten;
+/**
+ *  更改颜色亮度
+ *
+ *  @param darken 亮度从0到1
+ *
+ *  @return
+ */
+- (UIColor *)darkenColor:(CGFloat)darken;
+@end
+```
+
+
+## 随机生成颜色
+
+```objc
+#import <UIKit/UIKit.h>
+
+@interface UIColor (Random)
+/// 随机生成颜色
++ (UIColor *)RandomColor;
+@end
+```
+
+# UIApplication分类
+
+## 应用文件大小
+- 可以计算包含Cache、library、document三个目录下文件的大小
+
+```objc
+/**
+ *  统计应用文件大小
+ *
+ *  @return 大小
+ */
+- (NSString *)applicationSize;
+
+
+/**
+ *  计算文件夹大小
+ *
+ *  @param folderPath 文件夹路径
+ *
+ *  @return 大小
+ */
+- (unsigned long long)sizeOfFolder:(NSString *)folderPath;
+```
+
+## 应用权限
+- 包含通讯录、相册、蓝牙、位置、麦克风、提醒、运动数据等权限的获取方式。
+
+```objc
+
+//Check permission of service. Cannot check microphone or motion without asking user for permission
+-(kPermissionAccess)hasAccessToBluetoothLE;
+-(kPermissionAccess)hasAccessToCalendar;
+-(kPermissionAccess)hasAccessToContacts;
+-(kPermissionAccess)hasAccessToLocation;
+-(kPermissionAccess)hasAccessToPhotos;
+-(kPermissionAccess)hasAccessToReminders;
+
+//Request permission with callback
+/**
+*  请求访问日历
+*
+*  @param accessGranted 允许
+*  @param accessDenied  拒绝
+*/
+-(void)requestAccessToCalendarWithSuccess:(void(^)())accessGranted andFailure:(void(^)())accessDenied;
+/**
+ *  请求访问通讯录
+ *
+ *  @param accessGranted 允许
+ *  @param accessDenied  拒绝
+ */
+-(void)requestAccessToContactsWithSuccess:(void(^)())accessGranted andFailure:(void(^)())accessDenied;
+/**
+ *  请求访问麦克风
+ *
+ *  @param accessGranted 允许
+ *  @param accessDenied  拒绝
+ */
+-(void)requestAccessToMicrophoneWithSuccess:(void(^)())accessGranted andFailure:(void(^)())accessDenied;
+/**
+ *  请求访问相册
+ *
+ *  @param accessGranted 允许
+ *  @param accessDenied  拒绝
+ */
+-(void)requestAccessToPhotosWithSuccess:(void(^)())accessGranted andFailure:(void(^)())accessDenied;
+/**
+ *  请求访问提醒事项
+ *
+ *  @param accessGranted 允许
+ *  @param accessDenied  拒绝
+ */
+-(void)requestAccessToRemindersWithSuccess:(void(^)())accessGranted andFailure:(void(^)())accessDenied;
+
+/**
+ *  请求访问位置信息
+ *
+ *  @param accessGranted 允许
+ *  @param accessDenied  拒绝
+ */
+-(void)requestAccessToLocationWithSuccess:(void(^)())accessGranted andFailure:(void(^)())accessDenied;
+
+/**
+ *  检查运动状态
+ *
+ *  @param accessGranted 允许
+ */
+-(void)requestAccessToMotionWithSuccess:(void(^)())accessGranted;
+
+//Needs investigating - unsure whether it can be implemented because of required delegate callbacks
+//-(void)requestAccessToBluetoothLEWithSuccess:(void(^)())accessGranted;
+
+@end
+```
+
+# UIBezierPath分类
+
+- [绘图参考这个文章](http://www.cnblogs.com/songliquan/p/4592117.html)
+
+## 绘制特殊图形
+
+- heartShape 
+> ![Snip20160914_8.png](http://upload-images.jianshu.io/upload_images/760578-e61535c60505e72c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+- userShape
+> ![Snip20160914_7.png](http://upload-images.jianshu.io/upload_images/760578-629fd4fea1490e0e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+- martiniShape
+> ![Snip20160914_9.png](http://upload-images.jianshu.io/upload_images/760578-958caaa27630907d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+- starShape
+> ![Snip20160914_12.png](http://upload-images.jianshu.io/upload_images/760578-40a7eaba7dc954e9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+- 这种方式绘制起来太复杂，要自己计算各种角度。其实有一个更加方便的工具。在Mac上有个软件叫[PaintCode](http://www.paintcodeapp.com/)专门绘制适用于OC和Swift的二维图形。
+
+```objc
+#import <UIKit/UIKit.h>
+
+@interface UIBezierPath (BasicShapes)
+/// 心型
++ (UIBezierPath *)heartShape:(CGRect)originalFrame;
+/// 用户形状
++ (UIBezierPath *)userShape:(CGRect)originalFrame;
+/// 马汀尼
++ (UIBezierPath *)martiniShape:(CGRect)originalFrame;
+
++ (UIBezierPath *)beakerShape:(CGRect)originalFrame;
+/// 五角星
++ (UIBezierPath *)starShape:(CGRect)originalFrame;
+/// 多个五角星
++ (UIBezierPath *)stars:(NSUInteger)numberOfStars shapeInFrame:(CGRect)originalFrame;
+
+@end
+```
+
+
+## 打印贝瑟尔路径信息
+
+```objc
+/// 打印贝瑟尔路径信息
+- (NSString*)toSVGString;
+```
+
+## 绘制特殊符号
+
+>![Snip20160914_15.png](http://upload-images.jianshu.io/upload_images/760578-23cada8d16649d5d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+>![Snip20160914_16.png](http://upload-images.jianshu.io/upload_images/760578-104feaf7685c6a12.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+>![Snip20160914_17.png](http://upload-images.jianshu.io/upload_images/760578-e73bd9babd6a2be6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+>![Snip20160914_18.png](http://upload-images.jianshu.io/upload_images/760578-d5b3e670b0c27797.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+```objc
+/// 十
++ (UIBezierPath *)customBezierPathOfPlusSymbolWithRect:(CGRect)rect   // plus
+                                                scale:(CGFloat)scale;
+/// -
++ (UIBezierPath *)customBezierPathOfMinusSymbolWithRect:(CGRect)rect  // minus
+                                                  scale:(CGFloat)scale;
+/**
+ *  ✅号
+ *
+ *  @param rect  位置
+ *  @param scale 缩放
+ *  @param thick 厚度
+ *
+ *  @return
+ */
++ (UIBezierPath *)customBezierPathOfCheckSymbolWithRect:(CGRect)rect  // check
+                                                  scale:(CGFloat)scale
+                                                  thick:(CGFloat)thick;
+/**
+ *  ❌号
+ *
+ *  @param rect  位置
+ *  @param scale 缩放
+ *  @param thick 厚度
+ *
+ *  @return
+ */
++ (UIBezierPath *)customBezierPathOfCrossSymbolWithRect:(CGRect)rect  // cross
+                                                  scale:(CGFloat)scale
+                                                  thick:(CGFloat)thick;
+/**
+ *  箭头
+ *
+ *  @param rect  位置
+ *  @param scale 缩放
+ *  @param thick 厚度
+ *  @param direction 方向
+ *
+ *  @return
+ */
++ (UIBezierPath *)customBezierPathOfArrowSymbolWithRect:(CGRect)rect  // arrow
+                                                  scale:(CGFloat)scale
+                                                  thick:(CGFloat)thick
+                                              direction:(UIBezierPathArrowDirection)direction;
+/**
+ *  ✏️图形
+ *
+ *  @param rect  位置
+ *  @param scale 缩放
+ *  @param thick 厚度
+ *
+ *  @return
+ */
++ (UIBezierPath *)customBezierPathOfPencilSymbolWithRect:(CGRect)rect // pencil
+                                                   scale:(CGFloat)scale
+                                                   thick:(CGFloat)thick;
+
+@end
+```
+
+> 绘图的源代码比较枯燥，就不贴了，去github看吧
+
+# UIControl+Block
+- 使用Block方式处理UIControl控件的点击事件
+
+
+```objc
+#import <UIKit/UIKit.h>
+
+@interface UIControl (Block)
+
+- (void)touchDown:(void (^)(void))eventBlock;
+- (void)touchDownRepeat:(void (^)(void))eventBlock;
+- (void)touchDragInside:(void (^)(void))eventBlock;
+- (void)touchDragOutside:(void (^)(void))eventBlock;
+- (void)touchDragEnter:(void (^)(void))eventBlock;
+- (void)touchDragExit:(void (^)(void))eventBlock;
+- (void)touchUpInside:(void (^)(void))eventBlock;
+- (void)touchUpOutside:(void (^)(void))eventBlock;
+- (void)touchCancel:(void (^)(void))eventBlock;
+- (void)valueChanged:(void (^)(void))eventBlock;
+- (void)editingDidBegin:(void (^)(void))eventBlock;
+- (void)editingChanged:(void (^)(void))eventBlock;
+- (void)editingDidEnd:(void (^)(void))eventBlock;
+- (void)editingDidEndOnExit:(void (^)(void))eventBlock;
+
+@end
+```
+# UIDevice+Hardware
+- 一些设备相关的方法
+
+```objc
+//Return the current device CPU frequency
++ (NSUInteger)cpuFrequency;
+// Return the current device BUS frequency
++ (NSUInteger)busFrequency;
+//current device RAM size
++ (NSUInteger)ramSize;
+//Return the current device CPU number
++ (NSUInteger)cpuNumber;
+//Return the current device total memory
+
+/// 获取iOS系统的版本号
++ (NSString *)systemVersion;
+/// 判断当前系统是否有摄像头
++ (BOOL)hasCamera;
+/// 获取手机内存总量, 返回的是字节数
++ (NSUInteger)totalMemoryBytes;
+/// 获取手机可用内存, 返回的是字节数
++ (NSUInteger)freeMemoryBytes;
+
+/// 获取手机硬盘空闲空间, 返回的是字节数
++ (long long)freeDiskSpaceBytes;
+/// 获取手机硬盘总空间, 返回的是字节数
++ (long long)totalDiskSpaceBytes;
+@end
+```
+
+
 
 > [分类源码在这里](https://github.com/slq0378/SLQCategories)
