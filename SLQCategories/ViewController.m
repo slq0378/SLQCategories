@@ -18,6 +18,10 @@
 #import "UITextField+History.h"
 #import "UITextField+Shake.h"
 #import "UITextView+PlaceHolder.h"
+#import "UIView+Animation.h"
+#import "UIView+Debug.h"
+#import "UIView+draggable.h"
+
 
 @interface ViewController ()<UITextFieldDelegate>
 /**图片*/
@@ -53,20 +57,20 @@
 //    [self.view addSubview:field];
 //    _textField = field;
     
-    UITextView *textView = [[UITextView alloc] initWithFrame:CGRectMake(0, 200, ScreenWidth, 44)];
-    textView.layer.cornerRadius = 5;
-    textView.layer.masksToBounds = YES;
-    textView.backgroundColor = [UIColor lightGrayColor];
-    [self.view addSubview:textView];
-    _textView = textView;
+//    UITextView *textView = [[UITextView alloc] initWithFrame:CGRectMake(0, 200, ScreenWidth, 44)];
+//    textView.layer.cornerRadius = 5;
+//    textView.layer.masksToBounds = YES;
+//    textView.backgroundColor = [UIColor lightGrayColor];
+//    [self.view addSubview:textView];
+//    _textView = textView;
     
     UIButton *infoBtn = [[UIButton alloc] initWithFrame:CGRectMake(ScreenWidth*0.5-100, ScreenHeight - 300, 200, 200)];
     [self.view addSubview:infoBtn];
     infoBtn.tag = 100;
     [infoBtn setTitle:@"信息" forState:UIControlStateNormal];
     [infoBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-    [infoBtn setBackgroundImage:[UIImage imageWithColor:[UIColor orangeColor] andSize:CGSizeMake(200, 200)].roundImage  forState:UIControlStateNormal];
-    [infoBtn setBackgroundImage:[[UIImage imageWithColor:[UIColor orangeColor] andSize:CGSizeMake(200, 200)] covertToGrayImage].roundImage  forState:UIControlStateHighlighted];
+//    [infoBtn setBackgroundImage:[UIImage imageWithColor:[UIColor orangeColor] andSize:CGSizeMake(200, 200)].roundImage  forState:UIControlStateNormal];
+//    [infoBtn setBackgroundImage:[[UIImage imageWithColor:[UIColor orangeColor] andSize:CGSizeMake(200, 200)] covertToGrayImage].roundImage  forState:UIControlStateHighlighted];
     _infoBtn = infoBtn;
     
     
@@ -75,8 +79,8 @@
     btn.tag = 101;
     [btn setTitle:@"点击" forState:UIControlStateNormal];
     [btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-    [btn setBackgroundImage:[UIImage imageWithColor:[UIColor greenColor] andSize:CGSizeMake(100, 100)].roundImage  forState:UIControlStateNormal];
-    [btn setBackgroundImage:[[UIImage imageWithColor:[UIColor greenColor] andSize:CGSizeMake(100, 100)] covertToGrayImage].roundImage  forState:UIControlStateHighlighted];
+    [btn setBackgroundImage:[UIImage imageWithColor:[UIColor greenColor] andSize:CGSizeMake(100, 100)]  forState:UIControlStateNormal];
+//    [btn setBackgroundImage:[[UIImage imageWithColor:[UIColor greenColor] andSize:CGSizeMake(100, 100)] covertToGrayImage].roundImage  forState:UIControlStateHighlighted];
     _btn = btn;
     [self eventHandle];
     
@@ -84,22 +88,38 @@
 //    _graphView = [[GraphView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 200)];
 //    _graphView.backgroundColor = [UIColor greenColor];
 //    [self.view addSubview:_graphView];
-    self.view.backgroundColor = [UIColor redColor];
+    self.view.backgroundColor = [UIColor whiteColor];
 }
 
 #pragma mark - 事件处理
 - (void)eventHandle {
+    
     __weak typeof (self)weakSelf = self;
     // 事件处理
     [_btn addActionBlock:^(NSInteger tag) {
-        [weakSelf.textView addPlaceHolder:@"请输入密码"];
+      
+//        [weakSelf.imageView raceTo:CGPointMake(10, 100) withSnapBack:YES];
+        
+        
+        UIView *temp = [[UIView alloc] initWithFrame:CGRectMake(0, 100, 100, 100)];
+        temp.backgroundColor = [UIColor redColor];
+        [weakSelf.view addSubviewWithFadeAnimation:temp];
+        [temp enableDragging];
+//        [weakSelf.imageView rotate:90 secs:0.5 delegate:weakSelf callback:@selector(rotate)];
+//        [weakSelf.imageView scale:0.1 x:10 y:10 delegate:weakSelf callback:@selector(scale)];
+//        [weakSelf.imageView raceTo:CGPointMake(100, 200) withSnapBack:YES];
     }];
     
     [_infoBtn addActionBlock:^(NSInteger tag) {
         
     }];
 }
-
+- (void)scale {
+    [self.imageView spinCounterClockwise:1];
+}
+- (void)rotate {
+    [self.imageView spinCounterClockwise:1];
+}
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
     [textField showHistory];
