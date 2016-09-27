@@ -17,6 +17,7 @@
 #import "UIDevice+Hardware.h"
 #import "UITextField+History.h"
 #import "UITextField+Shake.h"
+#import "UITextView+PlaceHolder.h"
 
 @interface ViewController ()<UITextFieldDelegate>
 /**图片*/
@@ -29,6 +30,8 @@
 @property (nonatomic, strong) GraphView *graphView;
 /**UITextField*/
 @property (nonatomic, strong) UITextField *textField;
+/**UITextView*/
+@property (nonatomic, strong) UITextView *textView;
 @end
 
 @implementation ViewController
@@ -41,16 +44,21 @@
     [self.view addSubview:self.imageView];
     self.imageView.image = [UIImage imageNamed:@"1"];
     self.imageView.hidden = NO;
-    UITextField *field = [[UITextField alloc] initWithFrame:CGRectMake(0, 200, ScreenWidth, 44)];
-    field.layer.cornerRadius = 5;
-    field.layer.masksToBounds = YES;
-    field.delegate = self;
-    field.backgroundColor = [UIColor lightGrayColor];
-    field.identify = @"ssss";
-    [self.view addSubview:field];
-    _textField = field;
+//    UITextField *field = [[UITextField alloc] initWithFrame:CGRectMake(0, 200, ScreenWidth, 44)];
+//    field.layer.cornerRadius = 5;
+//    field.layer.masksToBounds = YES;
+//    field.delegate = self;
+//    field.backgroundColor = [UIColor lightGrayColor];
+//    field.identify = @"ssss";
+//    [self.view addSubview:field];
+//    _textField = field;
     
-    
+    UITextView *textView = [[UITextView alloc] initWithFrame:CGRectMake(0, 200, ScreenWidth, 44)];
+    textView.layer.cornerRadius = 5;
+    textView.layer.masksToBounds = YES;
+    textView.backgroundColor = [UIColor lightGrayColor];
+    [self.view addSubview:textView];
+    _textView = textView;
     
     UIButton *infoBtn = [[UIButton alloc] initWithFrame:CGRectMake(ScreenWidth*0.5-100, ScreenHeight - 300, 200, 200)];
     [self.view addSubview:infoBtn];
@@ -84,13 +92,7 @@
     __weak typeof (self)weakSelf = self;
     // 事件处理
     [_btn addActionBlock:^(NSInteger tag) {
-        
-//        [weakSelf.textField shake];
-//        [weakSelf.textField shake:20 withDelta:4];
-//        [weakSelf.textField shake:20 withDelta:5 completion:^{
-//            weakSelf.textField.text = @"烦烦烦";
-//        }];
-//        [weakSelf.textField shake:20 withDelta:5 speed:.1];
+        [weakSelf.textView addPlaceHolder:@"请输入密码"];
     }];
     
     [_infoBtn addActionBlock:^(NSInteger tag) {
