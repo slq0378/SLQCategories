@@ -7,14 +7,23 @@
 //
 
 #import "UITextView+PlaceHolder.h"
+#import <objc/runtime.h>
 static const char *phTextView = "placeHolderTextView";
+
+@interface UITextView () <UITextViewDelegate>
+@property (nonatomic, strong) UITextView *placeHolderTextView;
+
+@end
+
 @implementation UITextView (PlaceHolder)
+
 - (UITextView *)placeHolderTextView {
     return objc_getAssociatedObject(self, phTextView);
 }
 - (void)setPlaceHolderTextView:(UITextView *)placeHolderTextView {
     objc_setAssociatedObject(self, phTextView, placeHolderTextView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
+
 - (void)addPlaceHolder:(NSString *)placeHolder {
     if (![self placeHolderTextView]) {
         self.delegate = self;
@@ -29,6 +38,7 @@ static const char *phTextView = "placeHolderTextView";
         [self setPlaceHolderTextView:textView];
     }
 }
+
 # pragma mark -
 # pragma mark - UITextViewDelegate
 - (void)textViewDidBeginEditing:(UITextView *)textView {

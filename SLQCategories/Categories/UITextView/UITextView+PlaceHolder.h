@@ -7,10 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <objc/runtime.h>
-@interface UITextView (PlaceHolder) <UITextViewDelegate>
-@property (nonatomic, strong) UITextView *placeHolderTextView;
-//@property (nonatomic, assign) id <UITextViewDelegate> textViewDelegate;
+
+@interface UITextView (PlaceHolder)
 
 /**
  添加占位文字
