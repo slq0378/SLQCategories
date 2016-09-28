@@ -1,6 +1,6 @@
 # SLQCategories
 iOS Categories,that is all.
-# UIImage 分类大集合
+# UIImage 分类
 @(iOS)[UIImage]
 
 [TOC]
@@ -503,6 +503,432 @@ image =  [image waterWithText:@"哈哈哈" direction:ImageWaterDirectCenter font
 @end
 ```
 
+# UIView 分类
 
+
+## UIView+Animation
+- UIView的动画，平移，缩放啊，旋转啊，淡入淡出啊等等。
+
+```objectivec
+ #import <UIKit/UIKit.h>
+
+/**
+ 度数转换弧度
+ 
+ @param degrees 度数
+ 
+ @return 弧度
+ */
+float radiansForDegrees(int degrees);
+
+@interface UIView (Animation)
+#pragma mark - Moves
+//
+/**
+ 平移
+ 
+ @param destination 方向
+ @param secs        时间
+ @param option      动画方式
+ */
+- (void)moveTo:(CGPoint)destination duration:(float)secs option:(UIViewAnimationOptions)option;
+/**
+ 平移
+ 
+ @param destination 方向
+ @param secs        时间
+ @param option      动画方式
+ @param delegate    代理
+ @param method      动画完成回调
+ */
+- (void)moveTo:(CGPoint)destination duration:(float)secs option:(UIViewAnimationOptions)option delegate:(id)delegate callback:(SEL)method;
+/**
+ 平移
+ 
+ @param destination  方向
+ @param withSnapBack 是否有回弹效果
+ */
+- (void)raceTo:(CGPoint)destination withSnapBack:(BOOL)withSnapBack;
+/**
+ 平移
+ 
+ @param destination  方向
+ @param withSnapBack 是否有回弹效果
+ @param delegate     代理
+ @param method       动画完成回调
+ */
+- (void)raceTo:(CGPoint)destination withSnapBack:(BOOL)withSnapBack delegate:(id)delegate callback:(SEL)method;
+#pragma mark - Transforms
+//
+/**
+ 旋转
+ 
+ @param degrees  度数
+ @param secs     时间
+ @param delegate 代理
+ @param method   回调方法
+ */    
+- (void)rotate:(int)degrees secs:(float)secs delegate:(id)delegate callback:(SEL)method;
+/**
+ 缩放
+ 
+ @param secs     时间
+ @param scaleX   x
+ @param scaleY   Y
+ @param delegate 代理
+ @param method   回调
+ */
+- (void)scale:(float)secs x:(float)scaleX y:(float)scaleY delegate:(id)delegate callback:(SEL)method;
+/**
+ 时钟旋转样式
+ 
+ @param secs 时间
+ */
+- (void)spinClockwise:(float)secs;
+/**
+ 逆时针旋转
+ 
+ @param secs 时间
+ */
+- (void)spinCounterClockwise:(float)secs;
+#pragma mark - Transitions
+//
+/**
+ 翻页
+ 
+ @param secs 时间
+ */
+- (void)curlDown:(float)secs;
+/**
+ 翻页并移除view
+ 
+ @param secs 时间
+ */
+- (void)curlUpAndAway:(float)secs;
+/**
+ 旋转离开
+ 
+ @param secs 时间
+ */
+- (void)drainAway:(float)secs;
+#pragma mark - Effects
+/**
+ 渐变
+ 
+ @param newAlpha 透明度
+ @param secs     时间
+ */
+- (void)changeAlpha:(float)newAlpha secs:(float)secs;
+/**
+ 交替闪烁
+ 
+ @param secs         时间
+ @param continuously 持续的
+ */
+- (void)pulse:(float)secs continuously:(BOOL)continuously;
+#pragma mark - add subview
+/**
+ 淡出动画
+ 
+ @param subview view
+ */
+- (void)addSubviewWithFadeAnimation:(UIView *)subview;
+
+@end
+```
+
+
+## UIView+BlockGesture
+- 手势回调block ，快捷添加手势
+
+```objectivec
+#import <UIKit/UIKit.h>
+
+/**
+ block回调
+
+ @param gestureRecoginzer 手势信息
+ */
+typedef void (^GestureActionBlock)(UIGestureRecognizer *gestureRecoginzer);
+
+@interface UIView (BlockGesture)
+
+/**
+ 点击手势回调
+
+ @param block
+ */
+- (void)addTapActionWithBlock:(GestureActionBlock)block;
+
+/**
+ 长按手势回调
+
+ @param block
+ */
+- (void)addLongPressActionWithBlock:(GestureActionBlock)block;
+@end
+
+```
+
+- 看了之前的分类，这个太熟悉了，直接使用关联来管理新功能
+
+
+## UIView+Debug
+- 调试模式下显示出所有UIView的边界,使用方法交换，对所有init方法进行替换，然后绘制边界,重写load方法
+- ![Alt text](./屏幕快照 2016-09-27 下午5.39.26.png)
+
+
+## UIView+draggable
+- 主要实现控件可拖动，开启后可在视图内自由拖动控件.
+- 这个英文注释也很好看懂，就不翻译了。
+
+```objectivec
+/**-----------------------------------------------------------------------------
+ * @name UIView+draggable Methods
+ * -----------------------------------------------------------------------------
+ */
+
+/** Enables the dragging
+ *
+ * Enables the dragging state of the view
+ */
+- (void)enableDragging;
+
+/** Disable or enable the view dragging
+ *
+ * @param draggable The boolean that enables or disables the draggable state
+ */
+- (void)setDraggable:(BOOL)draggable;
+```
+
+## UIView+Nib
+- 快捷加载xib文件，从本地路径读取xib并获取需要的view
+
+
+```objectivec
+#import <UIKit/UIKit.h>
+
+@interface UIView (Nib)
+#pragma mark - 就在xib
+/**
+ 直接加载和类同名的xib
+
+ @return XIB
+ */
++ (UINib *)loadNib;
+
+/**
+ 加载xib
+
+ @param nibName xib名称
+
+ @return xib
+ */
++ (UINib *)loadNibNamed:(NSString*)nibName;
+
+/**
+ 加载xib
+
+ @param nibName xib名称
+ @param bundle  路径名称
+
+ @return xib
+ */
++ (UINib *)loadNibNamed:(NSString*)nibName bundle:(NSBundle *)bundle;
+#pragma mark - 加载xib，获取对应view
++ (instancetype)loadInstanceFromNib;
++ (instancetype)loadInstanceFromNibWithName:(NSString *)nibName;
++ (instancetype)loadInstanceFromNibWithName:(NSString *)nibName owner:(id)owner;
+
+/**
+ 加载xib，从xib中获取当前类对应的view
+
+ @param nibName xib名称
+ @param owner   拥有者
+ @param bundle  路径名
+
+ @return 找到需要的view
+ */
++ (instancetype)loadInstanceFromNibWithName:(NSString *)nibName owner:(id)owner bundle:(NSBundle *)bundle;
+
+@end
+
+```
+
+## UIView+RecursiveDescription
+- 打印视图的层级关系,这个方法在调试时很有用，查看view的层级关系。
+
+```
+•UIWindow:0x7f9ad0f080f0
+|   •UIView:0x7f9ad0d06970
+|   |   *_UILayoutGuide:0x7f9ad0d06d20
+|   |   *_UILayoutGuide:0x7f9ad0d07770
+|   |   UIImageView:0x7f9ad0c075c0
+|   |   UIButton:0x7f9ad0d0c3d0'信息'
+|   |   |   UIButtonLabel:0x7f9ad0d0da50'信息'
+|   |   UIButton:0x7f9ad0d0f2d0'点击'
+|   |   |   UIImageView:0x7f9ad0d112b0
+|   |   |   UIButtonLabel:0x7f9ad0d0f7a0'点击'
+
+Legend:
+	* - is laid out with auto layout
+	+ - is laid out manually, but is represented in the layout engine because translatesAutoresizingMaskIntoConstraints = YES
+	• - layout engine host
+```
+
+```objectivec
+#import <UIKit/UIKit.h>
+
+@interface UIView (RecursiveDescription)
+//打印视图层级
+-(NSString*)recursiveView;
+//打印约束
+-(NSString*)constraintsDescription;
+//打印整个视图树的字符串
+-(NSString*)autolayoutTraceDescription;
+
+@end
+```
+
+## UIView+Screenshot
+- 获取屏幕截图，可以直接指定view进行截图
+
+```objectivec
+#import <UIKit/UIKit.h>
+
+@interface UIView (Screenshot)
+
+/**
+ 截图
+
+ @return UIImage
+ */
+- (UIImage *)screenshot;
+
+/**
+ 从指定view截图
+
+ @param view 指定view
+
+ @return UIImage
+ */
++ (UIImage *)captureFromView:(UIView *)view;
+@end
+```
+
+## UIView+Shake
+- 这个也是地震抖动效果，和之前的UITextField+Shake一样
+
+```objectivec
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+typedef NS_ENUM(NSInteger, UIViewShakeDirection) {
+    UIViewShakeDirectionHorizontal = 0,
+    UIViewShakeDirectionVertical
+};
+
+@interface UIView (Shake)
+/**
+ 震动
+ */
+- (void)shake;
+
+
+- (void)shake:(int)times withDelta:(CGFloat)delta;
+
+/** 震动指定次数
+ *
+ * @param times 次数
+ * @param delta 偏移量
+ * @param handler 回调
+ */
+- (void)shake:(int)times withDelta:(CGFloat)delta completion:(void((^)()))handler;
+
+/** 指定时间内震动多少次
+ *
+ * @param times 次数
+ * @param delta 偏移量
+ * @param interval 震动时间
+ */
+- (void)shake:(int)times withDelta:(CGFloat)delta speed:(NSTimeInterval)interval;
+
+/** 震动
+ *
+ * @param times 次数
+ * @param delta 偏移量
+ * @param handler 回调
+ * @param interval 震动时间
+ */
+- (void)shake:(int)times withDelta:(CGFloat)delta speed:(NSTimeInterval)interval completion:(void((^)()))handler;
+
+/** 震动
+ *
+ * @param times 次数
+ * @param delta 偏移量
+ * @param interval 震动时间
+ * @param direction 震动方向
+ */
+- (void)shake:(int)times withDelta:(CGFloat)delta speed:(NSTimeInterval)interval shakeDirection:(UIViewShakeDirection)shakeDirection;
+
+/** 震动
+ *
+ * @param times 次数
+ * @param delta 偏移量
+ * @param interval 震动时间
+ * @param direction 震动方向
+ * @param handler 回调block
+ */
+- (void)shake:(int)times withDelta:(CGFloat)delta speed:(NSTimeInterval)interval shakeDirection:(UIViewShakeDirection)shakeDirection completion:(void((^)()))handler;
+
+
+@end
+```
+
+## UIView+Toast
+- 这个是安卓类似的toast提示效果，还不错
+-![Alt text](./屏幕快照 2016-09-28 上午10.41.29.png)
+
+```objectivec
+#import <UIKit/UIKit.h>
+
+extern NSString * const CSToastPositionTop;
+extern NSString * const CSToastPositionCenter;
+extern NSString * const CSToastPositionBottom;
+
+@interface UIView (Toast)
+#pragma mark - toast提示
+// each makeToast method creates a view and displays it as toast
+- (void)makeToast:(NSString *)message;
+- (void)makeToast:(NSString *)message duration:(NSTimeInterval)interval position:(id)position;
+- (void)makeToast:(NSString *)message duration:(NSTimeInterval)interval position:(id)position image:(UIImage *)image;
+- (void)makeToast:(NSString *)message duration:(NSTimeInterval)interval position:(id)position title:(NSString *)title;
+- (void)makeToast:(NSString *)message duration:(NSTimeInterval)interval position:(id)position title:(NSString *)title image:(UIImage *)image;
+#pragma mark - 显示菊花转动
+// displays toast with an activity spinner
+- (void)makeToastActivity;
+- (void)makeToastActivity:(id)position;
+- (void)hideToastActivity;
+#pragma mark - 将View当做一个toast弹出
+// the showToast methods display any view as toast
+- (void)showToast:(UIView *)toast;
+- (void)showToast:(UIView *)toast duration:(NSTimeInterval)interval position:(id)point;
+- (void)showToast:(UIView *)toast duration:(NSTimeInterval)interval position:(id)point
+      tapCallback:(void(^)(void))tapCallback;
+
+@end
+```
+
+## UIView+CurrentController
+- 获取当前view的控制器对象，这个很常用
+
+```objectivec
+#import <UIKit/UIKit.h>
+
+@interface UIView (CurrentController)
+
+/** 获取当前View的控制器对象 */
+-(UIViewController *)getCurrentViewController;
+@end
+```
 
 > [分类源码在这里](https://github.com/slq0378/SLQCategories)
