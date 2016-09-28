@@ -11,36 +11,36 @@
 @implementation UIView (Shake)
 
 - (void)shake {
-    [self _shake:10 direction:1 currentTimes:0 withDelta:5 speed:0.03 shakeDirection:ShakeDirectionHorizontal completion:nil];
+    [self _shake:10 direction:1 currentTimes:0 withDelta:5 speed:0.03 shakeDirection:UIViewShakeDirectionHorizontal completion:nil];
 }
 
 - (void)shake:(int)times withDelta:(CGFloat)delta {
-    [self _shake:times direction:1 currentTimes:0 withDelta:delta speed:0.03 shakeDirection:ShakeDirectionHorizontal completion:nil];
+    [self _shake:times direction:1 currentTimes:0 withDelta:delta speed:0.03 shakeDirection:UIViewShakeDirectionHorizontal completion:nil];
 }
 
 - (void)shake:(int)times withDelta:(CGFloat)delta completion:(void(^)())handler {
-    [self _shake:times direction:1 currentTimes:0 withDelta:delta speed:0.03 shakeDirection:ShakeDirectionHorizontal completion:handler];
+    [self _shake:times direction:1 currentTimes:0 withDelta:delta speed:0.03 shakeDirection:UIViewShakeDirectionHorizontal completion:handler];
 }
 
 - (void)shake:(int)times withDelta:(CGFloat)delta speed:(NSTimeInterval)interval {
-    [self _shake:times direction:1 currentTimes:0 withDelta:delta speed:interval shakeDirection:ShakeDirectionHorizontal completion:nil];
+    [self _shake:times direction:1 currentTimes:0 withDelta:delta speed:interval shakeDirection:UIViewShakeDirectionHorizontal completion:nil];
 }
 
 - (void)shake:(int)times withDelta:(CGFloat)delta speed:(NSTimeInterval)interval completion:(void(^)())handler {
-    [self _shake:times direction:1 currentTimes:0 withDelta:delta speed:interval shakeDirection:ShakeDirectionHorizontal completion:handler];
+    [self _shake:times direction:1 currentTimes:0 withDelta:delta speed:interval shakeDirection:UIViewShakeDirectionHorizontal completion:handler];
 }
 
-- (void)shake:(int)times withDelta:(CGFloat)delta speed:(NSTimeInterval)interval shakeDirection:(ShakeDirection)shakeDirection {
+- (void)shake:(int)times withDelta:(CGFloat)delta speed:(NSTimeInterval)interval shakeDirection:(UIViewShakeDirection)shakeDirection {
     [self _shake:times direction:1 currentTimes:0 withDelta:delta speed:interval shakeDirection:shakeDirection completion:nil];
 }
 
-- (void)shake:(int)times withDelta:(CGFloat)delta speed:(NSTimeInterval)interval shakeDirection:(ShakeDirection)shakeDirection completion:(void (^)(void))completion {
+- (void)shake:(int)times withDelta:(CGFloat)delta speed:(NSTimeInterval)interval shakeDirection:(UIViewShakeDirection)shakeDirection completion:(void (^)(void))completion {
     [self _shake:times direction:1 currentTimes:0 withDelta:delta speed:interval shakeDirection:shakeDirection completion:completion];
 }
 
-- (void)_shake:(int)times direction:(int)direction currentTimes:(int)current withDelta:(CGFloat)delta speed:(NSTimeInterval)interval shakeDirection:(ShakeDirection)shakeDirection completion:(void (^)(void))completionHandler {
+- (void)_shake:(int)times direction:(int)direction currentTimes:(int)current withDelta:(CGFloat)delta speed:(NSTimeInterval)interval shakeDirection:(UIViewShakeDirection)shakeDirection completion:(void (^)(void))completionHandler {
     [UIView animateWithDuration:interval animations:^{
-        self.layer.affineTransform = (shakeDirection == ShakeDirectionHorizontal) ? CGAffineTransformMakeTranslation(delta * direction, 0) : CGAffineTransformMakeTranslation(0, delta * direction);
+        self.layer.affineTransform = (shakeDirection == UIViewShakeDirectionHorizontal) ? CGAffineTransformMakeTranslation(delta * direction, 0) : CGAffineTransformMakeTranslation(0, delta * direction);
     } completion:^(BOOL finished) {
         if(current >= times) {
             [UIView animateWithDuration:interval animations:^{

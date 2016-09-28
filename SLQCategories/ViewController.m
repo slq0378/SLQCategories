@@ -10,17 +10,17 @@
 
 #import "ViewController.h"
 #import "AllCategoriesHeader.h"
-#import "UIApplication+ApplicationSize.h"
-#import "UIApplication+Permissions.h"
+//#import "UIApplication+ApplicationSize.h"
+//#import "UIApplication+Permissions.h"
 #import "GraphView.h"
 #import "UIColorCategoriesHeader.h"
-#import "UIDevice+Hardware.h"
-#import "UITextField+History.h"
-#import "UITextField+Shake.h"
-#import "UITextView+PlaceHolder.h"
-#import "UIView+Animation.h"
-#import "UIView+Debug.h"
-#import "UIView+draggable.h"
+//#import "UIDevice+Hardware.h"
+//#import "UITextField+History.h"
+//#import "UITextField+Shake.h"
+//#import "UITextView+PlaceHolder.h"
+//#import "UIView+Animation.h"
+//#import "UIView+Debug.h"
+#import "UIView+Toast.h"
 
 
 @interface ViewController ()<UITextFieldDelegate>
@@ -100,33 +100,34 @@
       
 //        [weakSelf.imageView raceTo:CGPointMake(10, 100) withSnapBack:YES];
         
-        
-        UIView *temp = [[UIView alloc] initWithFrame:CGRectMake(0, 100, 100, 100)];
-        temp.backgroundColor = [UIColor redColor];
-        [weakSelf.view addSubviewWithFadeAnimation:temp];
-        [temp enableDragging];
+//        NSLog(@"%@",[weakSelf.imageView autolayoutTraceDescription]);
+//        UIView *temp = [[UIView alloc] initWithFrame:CGRectMake(0, 100, 100, 100)];
+//        temp.backgroundColor = [UIColor redColor];
+//        [weakSelf.view addSubviewWithFadeAnimation:temp];
+//        [temp enableDragging];
+//        [weakSelf.imageView shake];
 //        [weakSelf.imageView rotate:90 secs:0.5 delegate:weakSelf callback:@selector(rotate)];
 //        [weakSelf.imageView scale:0.1 x:10 y:10 delegate:weakSelf callback:@selector(scale)];
 //        [weakSelf.imageView raceTo:CGPointMake(100, 200) withSnapBack:YES];
+        
+//        [weakSelf.view makeToast:@"哈哈哈"];
+        [weakSelf.view makeToast:@"哈哈哈" duration:2.5 position:CSToastPositionCenter];
+//        [weakSelf.view makeToast:@"啦啦" duration:0.5 position:CSToastPositionBottom image:[UIImage imageNamed:@"1"]];
+//        [weakSelf.view makeToast:@"卡卡卡" duration:0.5 position:CSToastPositionCenter title:@"环境很好"];
+//        [weakSelf.view makeToast:@"卡卡卡" duration:0.5 position:CSToastPositionCenter title:@"环境很好" image:[UIImage imageNamed:@"1"]];
+//        [weakSelf.view makeToastActivity];
+//        UIView *temp = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+//        temp.backgroundColor = [UIColor redColor];
+//        [weakSelf.view showToast:temp];
+//        [weakSelf.view showToast:temp duration:0.5 position:CSToastPositionCenter];
+//           [weakSelf.view showToast:temp duration:0.5 position:CSToastPositionCenter tapCallback:^{
+        
+//           }];
     }];
     
     [_infoBtn addActionBlock:^(NSInteger tag) {
         
     }];
-}
-- (void)scale {
-    [self.imageView spinCounterClockwise:1];
-}
-- (void)rotate {
-    [self.imageView spinCounterClockwise:1];
-}
-
-- (void)textFieldDidBeginEditing:(UITextField *)textField {
-    [textField showHistory];
-}
-
-- (void)textFieldDidEndEditing:(UITextField *)textField {
-    [textField hideHistroy];
 }
 
 

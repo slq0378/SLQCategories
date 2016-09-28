@@ -1,28 +1,19 @@
 //
-//  UIView+Frame.h
-//  iOS-Categories (https://github.com/shaojiankui/iOS-Categories)
+// UIView+Frame
+//  Chating
 //
-//  Created by Jakey on 14/12/15.
-//  Copyright (c) 2014年 www.skyfox.org. All rights reserved.
+//  Created by Christian on 12/12/15.
+//  Copyright © 2015 slq. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
 @interface UIView (Frame)
-// shortcuts for frame properties
-@property (nonatomic, assign) CGPoint origin;
-@property (nonatomic, assign) CGSize size;
+@property (nonatomic,assign) CGFloat SLQHeight;
+@property (nonatomic,assign) CGFloat SLQWidth;
+@property (nonatomic,assign) CGFloat SLQLeft;
+@property (nonatomic,assign) CGFloat SLQTop;
+@property (nonatomic,assign) CGFloat SLQRight;
+@property (nonatomic,assign) CGFloat SLQBottom;
 
-// shortcuts for positions
-@property (nonatomic) CGFloat centerX;
-@property (nonatomic) CGFloat centerY;
-
-
-@property (nonatomic) CGFloat top;
-@property (nonatomic) CGFloat bottom;
-@property (nonatomic) CGFloat right;
-@property (nonatomic) CGFloat left;
-
-@property (nonatomic) CGFloat width;
-@property (nonatomic) CGFloat height;
 @end

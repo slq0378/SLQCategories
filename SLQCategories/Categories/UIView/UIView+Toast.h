@@ -33,19 +33,19 @@ extern NSString * const CSToastPositionCenter;
 extern NSString * const CSToastPositionBottom;
 
 @interface UIView (Toast)
-
+#pragma mark - toast提示
 // each makeToast method creates a view and displays it as toast
 - (void)makeToast:(NSString *)message;
 - (void)makeToast:(NSString *)message duration:(NSTimeInterval)interval position:(id)position;
 - (void)makeToast:(NSString *)message duration:(NSTimeInterval)interval position:(id)position image:(UIImage *)image;
 - (void)makeToast:(NSString *)message duration:(NSTimeInterval)interval position:(id)position title:(NSString *)title;
 - (void)makeToast:(NSString *)message duration:(NSTimeInterval)interval position:(id)position title:(NSString *)title image:(UIImage *)image;
-
+#pragma mark - 显示菊花转动
 // displays toast with an activity spinner
 - (void)makeToastActivity;
 - (void)makeToastActivity:(id)position;
 - (void)hideToastActivity;
-
+#pragma mark - 将View当做一个toast弹出
 // the showToast methods display any view as toast
 - (void)showToast:(UIView *)toast;
 - (void)showToast:(UIView *)toast duration:(NSTimeInterval)interval position:(id)point;

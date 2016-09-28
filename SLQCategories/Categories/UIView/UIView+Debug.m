@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Cardinal Solutions. All rights reserved.
 //
 
-#import "UIView+Debug.h"
+#import "UIView+BlockGesture.h"
 
 @implementation UIView (Debug)
 
@@ -52,6 +52,7 @@
     // It's called even before the "main" function is called. Beware: there's no
     // autorelease pool at this point, so avoid Objective-C calls.
 
+#ifdef UIView_Debug
     Method original, swizzle;
     
     // Get the "- (id)initWithFrame:" method.
@@ -67,6 +68,7 @@
     swizzle = class_getInstanceMethod(self, @selector(swizzled_initWithCoder:));
     // Swap their implementations.
     method_exchangeImplementations(original, swizzle);
+#endif
 
 }
 

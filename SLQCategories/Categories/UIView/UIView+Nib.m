@@ -22,6 +22,7 @@
 {
     return [UINib nibWithNibName:nibName bundle:bundle];
 }
+
 + (instancetype)loadInstanceFromNib
 {
     return [self loadInstanceFromNibWithName:NSStringFromClass([self class])];

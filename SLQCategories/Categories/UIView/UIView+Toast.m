@@ -98,6 +98,7 @@ NSString * const CSToastPositionBottom          = @"bottom";
     [self showToast:toast duration:duration position:position];  
 }
 
+#pragma mark -
 - (void)showToast:(UIView *)toast {
     [self showToast:toast duration:CSToastDefaultDuration position:nil];
 }
@@ -109,6 +110,14 @@ NSString * const CSToastPositionBottom          = @"bottom";
 }
 
 
+/**
+ 显示toast
+
+ @param toast       view
+ @param duration    时间
+ @param position    位置
+ @param tapCallback 回调
+ */
 - (void)showToast:(UIView *)toast duration:(NSTimeInterval)duration position:(id)position
       tapCallback:(void(^)(void))tapCallback
 {
@@ -137,7 +146,9 @@ NSString * const CSToastPositionBottom          = @"bottom";
                      }];
 }
 
-
+/**
+ 隐藏toast
+ */
 - (void)hideToast:(UIView *)toast {
     [UIView animateWithDuration:CSToastFadeDuration
                           delay:0.0
@@ -209,6 +220,9 @@ NSString * const CSToastPositionBottom          = @"bottom";
                      } completion:nil];
 }
 
+/**
+ 隐藏toast
+ */
 - (void)hideToastActivity {
     UIView *existingActivityView = (UIView *)objc_getAssociatedObject(self, &CSToastActivityViewKey);
     if (existingActivityView != nil) {
@@ -226,6 +240,14 @@ NSString * const CSToastPositionBottom          = @"bottom";
 
 #pragma mark - Helpers
 
+/**
+ 计算toast显示位置
+
+ @param point 中心
+ @param toast view
+
+ @return 位置
+ */
 - (CGPoint)centerPointForPosition:(id)point withToast:(UIView *)toast {
     if([point isKindOfClass:[NSString class]]) {
         if([point caseInsensitiveCompare:CSToastPositionTop] == NSOrderedSame) {
@@ -241,6 +263,16 @@ NSString * const CSToastPositionBottom          = @"bottom";
     return CGPointMake(self.bounds.size.width/2, (self.bounds.size.height - (toast.frame.size.height / 2)) - CSToastVerticalPadding);
 }
 
+/**
+ 计算UILable最佳尺寸
+
+ @param string          字符串
+ @param font            字体
+ @param constrainedSize 约束尺寸
+ @param lineBreakMode
+
+ @return CGSize
+ */
 - (CGSize)sizeForString:(NSString *)string font:(UIFont *)font constrainedToSize:(CGSize)constrainedSize lineBreakMode:(NSLineBreakMode)lineBreakMode {
     if ([string respondsToSelector:@selector(boundingRectWithSize:options:attributes:context:)]) {
         NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
@@ -256,6 +288,15 @@ NSString * const CSToastPositionBottom          = @"bottom";
 #pragma clang diagnostic pop
 }
 
+/**
+ 创建toast窗口
+
+ @param message 描述
+ @param title   标题
+ @param image   图片
+
+ @return view
+ */
 - (UIView *)viewForMessage:(NSString *)message title:(NSString *)title image:(UIImage *)image {
     // sanity
     if((message == nil) && (title == nil) && (image == nil)) return nil;

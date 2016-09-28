@@ -1,35 +1,41 @@
 //
-//  UIView+Screenshot.m
-//  iOS-Categories (https://github.com/shaojiankui/iOS-Categories)
+//  UIView+Screenshot.h
 //
-//  Created by Jakey on 15/1/10.
-//  Copyright (c) 2015年 www.skyfox.org. All rights reserved.
+//  Created by Christian on 12/12/15.
+//  Copyright © 2015 slq. All rights reserved.
 //
 
 #import "UIView+Screenshot.h"
 #import <QuartzCore/QuartzCore.h>
 @implementation UIView (Screenshot)
+
 - (UIImage *)screenshot {
-    UIGraphicsBeginImageContextWithOptions(self.bounds.size, NO, [UIScreen mainScreen].scale);
+   return [UIView captureFromView:self];
+}
+
+/**
+ *  从给定UIView中截图：UIView转UIImage
+ */
++ (UIImage *)captureFromView:(UIView *)view {
     
-    // IOS7及其后续版本
-    if ([self respondsToSelector:@selector(drawViewHierarchyInRect:afterScreenUpdates:)]) {
-        NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:
-                                    [self methodSignatureForSelector:
-                                     @selector(drawViewHierarchyInRect:afterScreenUpdates:)]];
-        [invocation setTarget:self];
-        [invocation setSelector:@selector(drawViewHierarchyInRect:afterScreenUpdates:)];
-        CGRect arg2 = self.bounds;
-        BOOL arg3 = YES;
-        [invocation setArgument:&arg2 atIndex:2];
-        [invocation setArgument:&arg3 atIndex:3];
-        [invocation invoke];
-    } else { // IOS7之前的版本
-        [self.layer renderInContext:UIGraphicsGetCurrentContext()];
-    }
+    //开启图形上下文
+    UIGraphicsBeginImageContextWithOptions(view.frame.size, NO, 0.0f);
     
-    UIImage *screenshot = UIGraphicsGetImageFromCurrentImageContext();
+    //获取上下文
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    //在新建的图形上下文中渲染view的layer
+    [view.layer renderInContext:context];
+    
+    [[UIColor clearColor] setFill];
+    
+    //获取图片
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    
+    //关闭图形上下文
     UIGraphicsEndImageContext();
-    return screenshot;
+    
+    return image;
+    
 }
 @end
