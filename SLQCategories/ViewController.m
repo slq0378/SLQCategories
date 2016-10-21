@@ -20,8 +20,8 @@
 //#import "UITextView+PlaceHolder.h"
 //#import "UIView+Animation.h"
 //#import "UIView+Debug.h"
-#import "UIView+Toast.h"
-
+//#import "UIView+Toast.h"
+#import "NSObject+Additions.h"
 
 @interface ViewController ()<UITextFieldDelegate>
 /**图片*/
@@ -97,8 +97,14 @@
     __weak typeof (self)weakSelf = self;
     // 事件处理
     [_btn addActionBlock:^(NSInteger tag) {
-      
-//        [weakSelf.imageView raceTo:CGPointMake(10, 100) withSnapBack:YES];
+        NSLog(@"1%@",weakSelf.dictionaryValue);
+        
+        
+        NSLog(@"2%@",weakSelf.allPropertyKeys);
+        
+        NSLog(@"3%@",weakSelf.allPropertyKeyPaths);
+
+        //        [weakSelf.imageView raceTo:CGPointMake(10, 100) withSnapBack:YES];
         
 //        NSLog(@"%@",[weakSelf.imageView autolayoutTraceDescription]);
 //        UIView *temp = [[UIView alloc] initWithFrame:CGRectMake(0, 100, 100, 100)];
@@ -111,7 +117,7 @@
 //        [weakSelf.imageView raceTo:CGPointMake(100, 200) withSnapBack:YES];
         
 //        [weakSelf.view makeToast:@"哈哈哈"];
-        [weakSelf.view makeToast:@"哈哈哈" duration:2.5 position:CSToastPositionCenter];
+//        [weakSelf.view makeToast:@"哈哈哈" duration:2.5 position:CSToastPositionCenter];
 //        [weakSelf.view makeToast:@"啦啦" duration:0.5 position:CSToastPositionBottom image:[UIImage imageNamed:@"1"]];
 //        [weakSelf.view makeToast:@"卡卡卡" duration:0.5 position:CSToastPositionCenter title:@"环境很好"];
 //        [weakSelf.view makeToast:@"卡卡卡" duration:0.5 position:CSToastPositionCenter title:@"环境很好" image:[UIImage imageNamed:@"1"]];
