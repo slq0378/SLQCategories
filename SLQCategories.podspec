@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name         = 'SLQCategories'
-s.version      = '1.0.6'
+s.version      = '1.0.7'
 s.license      = { :type => 'MIT', :file => 'LICENSE' }
 s.homepage     = 'https://github.com/slq0378'
 s.authors      = {'MrSong' => 'slq0378@163.com'}
@@ -44,5 +44,25 @@ s.requires_arc = true
 
 	s.subspec 'UIApplication' do |ss|
 	ss.source_files = 'SLQCategories/Categories/UIApplication/*.{h,m}'
+	end
+
+	s.subspec 'UIView' do |ss|
+	ss.source_files = 'SLQCategories/Categories/UIView/*.{h,m}'
+	end
+
+	s.subspec 'UITextField' do |ss|
+	ss.source_files = 'SLQCategories/Categories/UITextField/*.{h,m}'
+	end
+
+	s.subspec 'UITextView' do |ss|
+	ss.source_files = 'SLQCategories/Categories/UITextView/*.{h,m}'
+	end
+
+	s.subspec 'NSString' do |ss|
+	ss.source_files = 'SLQCategories/Categories/NSString/*.{h,m}'
+	end
+
+	s.subspec 'NSDate' do |ss|
+	ss.source_files = 'SLQCategories/Categories/NSDate/*.{h,m}'
 	end
 end
