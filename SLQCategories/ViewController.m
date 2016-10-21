@@ -96,12 +96,6 @@
     __weak typeof (self)weakSelf = self;
     // 事件处理
     [_btn addActionBlock:^(NSInteger tag) {
-        NSLog(@"1%@",weakSelf.dictionaryValue);
-        
-        
-        NSLog(@"2%@",weakSelf.allPropertyKeys);
-        
-        NSLog(@"3%@",weakSelf.allPropertyKeyPaths);
 
         //        [weakSelf.imageView raceTo:CGPointMake(10, 100) withSnapBack:YES];
         
