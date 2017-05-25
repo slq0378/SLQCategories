@@ -1,9 +1,9 @@
 Pod::Spec.new do |s|
 s.name         = 'SLQCategories'
-s.version      = '1.0.7'
+s.version      = '1.0.8'
 s.license      = { :type => 'MIT', :file => 'LICENSE' }
 s.homepage     = 'https://github.com/slq0378'
-s.authors      = {'MrSong' => 'slq0378@163.com'}
+s.authors      = {'MrSong' => 'slq0378@gmail.com'}
 s.summary      = 'iOS分类集合，各种简单易用分类'
 
 s.platform     =  :ios, '7.0'
@@ -64,5 +64,9 @@ s.requires_arc = true
 
 	s.subspec 'NSDate' do |ss|
 	ss.source_files = 'SLQCategories/Categories/NSDate/*.{h,m}'
+	end
+
+	s.subspec 'ALAssetsLibrary' do |ss|
+	ss.source_files = 'SLQCategories/Categories/ALAssetsLibrary/*.{h,m}'
 	end
 end
